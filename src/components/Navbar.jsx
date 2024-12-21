@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const routes = (
-    <div className="flex md:flex-row flex-col items-center">
+    <div className="flex lg:flex-row flex-col lg:items-center">
       <li>
         <Link to="/">Home</Link>
       </li>
@@ -30,13 +30,13 @@ const Navbar = () => {
         </li>
         <li className="lg:block hidden">|</li>
 
-        <li className="md:-ml-2"><button className="text-gray-700 font-bold ml-2">Logout</button></li>
+        <li><button className="text-gray-700 font-bold">Logout</button></li>
       </>
       {/* )} */}
     </div>
   );
   return (
-    <div className="navbar justify-center bg-base-100 shadow-md fixed lg:px-10 md:px-6">
+    <div className="navbar justify-between bg-base-100 shadow-md fixed z-10 lg:px-10 px-6">
       <div className="navbar-start">
         <div className="flex gap-2 items-center">
           <img
@@ -44,11 +44,11 @@ const Navbar = () => {
             src="car-rental-96.png"
             alt="Logo of Car rental"
           />
-          <h2 className="lg:text-2xl text-xl text-gray-800 font-bold">Car Rental</h2>
+          <h2 className="text-2xl text-gray-800 font-bold">Car Rental</h2>
         </div>
       </div>
       <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost md:hidden bg-accent text-white">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden bg-cyan-500 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -66,12 +66,12 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[5] mt-3 w-56 p-3 right-0 shadow-sm *:text-gray-700 *:font-bold"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-56 p-3 right-2 shadow-sm *:text-gray-700 *:font-bold"
           >
             {routes}
           </ul>
         </div>
-      <div className="navbar-end hidden md:flex">
+      <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 *:text-gray-700 *:font-bold">
           {routes}
         </ul>

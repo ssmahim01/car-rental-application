@@ -14,9 +14,9 @@ const Footer = () => {
         <h2 className="text-2xl text-gray-900 font-bold">Car Rental</h2>
       </div>
 
-      <div className="divider py-4"></div>
+      <div className="divider md:py-4 py-2"></div>
 
-      <div className="flex justify-between items-center px-4 pb-4">
+      <div className="flex flex-wrap md:gap-0 gap-5 md:justify-between justify-center items-center px-4">
           <p className="font-semibold">Copyright © {new Date().getFullYear()} - All right reserved by </p>
         <nav className="flex gap-3 items-center">
          <Link to="https://www.facebook.com/ssmahim" target="_blank"><FaFacebook className="text-blue-500 text-2xl" /></Link>
