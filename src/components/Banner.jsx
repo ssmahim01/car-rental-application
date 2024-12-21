@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div
-      className="hero lg:h-[60vh] md:h-[80vh] h-[70vh] mt-2 mb-8 bg-cover bg-center"
+      className="hero lg:h-[70vh] md:h-[80vh] h-[60vh] mt-2 mb-8 bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage:
-          "url('car-rent.jpg')",
+          "url('car-rent-bg.jpg')",
       }}
     >
       <div className="hero-overlay bg-opacity-60"></div>
