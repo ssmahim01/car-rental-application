@@ -17,7 +17,8 @@ const Footer = () => {
       <div className="divider md:py-4 py-2"></div>
 
       <div className="flex flex-wrap md:gap-0 gap-5 md:justify-between justify-center items-center px-4">
-          <p className="font-semibold">Copyright © {new Date().getFullYear()} - All right reserved by </p>
+          <p className="font-semibold md:text-left text-center">Copyright © {new Date().getFullYear()} - All right reserved <br /> <span className="font-bold">by Car Rental Ltd.</span></p>
+
         <nav className="flex gap-3 items-center">
          <Link to="https://www.facebook.com/ssmahim" target="_blank"><FaFacebook className="text-blue-500 text-2xl" /></Link>
 
