@@ -1,8 +1,22 @@
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
-  // const { user } = useAuth();
+  const { user, logOutUser } = useAuth();
+
+  const handleLogOut = () => {
+    logOutUser()
+    .then(() => {
+      Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "Logged out successfully",
+        showConfirmButton: false,
+        timer: 2500
+      });
+    })
+  };
 
   const routes = (
     <div className="flex lg:flex-row flex-col lg:items-center">
@@ -14,11 +28,12 @@ const Navbar = () => {
         <Link to="/available-cars">Available Cars</Link>
       </li>
       <li className="lg:block hidden">|</li>
-      <li>
-        <Link to="/log-in">Log-in</Link>
-      </li>
-      <li className="lg:block hidden">|</li>
-      {/* {user && ( */}
+      {!user && (
+        <li>
+          <Link to="/log-in">Log-in</Link>
+        </li>
+      )}
+      {user && (
         <>
           <li>
             <Link to="/add-car">Add Car</Link>
@@ -34,10 +49,10 @@ const Navbar = () => {
           <li className="lg:block hidden">|</li>
 
           <li>
-            <button className="text-gray-700 font-bold">Logout</button>
+            <button onClick={handleLogOut} className="text-rose-600 font-bold">Logout</button>
           </li>
         </>
-      {/* )} */}
+      )}
     </div>
   );
   return (
