@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const AddCar = () => {
   const { user } = useAuth();
@@ -48,7 +49,28 @@ const AddCar = () => {
         body: JSON.stringify(carInfo),
       })
         .then((res) => res.json())
-        .then((data) => console.log(data));
+        .then((data) => {
+          // console.log(data)
+          if(data.insertedId){
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Successfully added a car",
+              showConfirmButton: false,
+              timer: 2500,
+            });
+          }
+        })
+        .catch(error => {
+          // console.log(error.message);
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Failed to add a car",
+            showConfirmButton: false,
+            timer: 2500,
+          });
+        })
     } catch (error) {
       // console.error(error);
     }
@@ -103,7 +125,7 @@ const AddCar = () => {
                 onChange={(e) => setAvailability(e.target.checked)}
                 className="checkbox checkbox-primary"
               />
-              <span className="text-gray-700 font-semibold">Available</span>
+              <span className="text-gray-700 font-semibold">{availability ? "Available" : "Not Available"}</span>
             </div>
           </div>
 
