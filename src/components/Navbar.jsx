@@ -90,7 +90,7 @@ const Navbar = () => {
         </div>
         <ul
           tabIndex={0}
-          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-56 p-3 right-2 shadow-sm *:text-gray-700 *:font-bold"
+          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-56 p-2 right-2 shadow-md *:text-gray-700 *:font-bold"
         >
           {routes}
         </ul>

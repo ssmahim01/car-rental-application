@@ -4,6 +4,8 @@ import RootLayout from "../layouts/RootLayout";
 import Error from "../ErrorPage/Error";
 import LoginPage from "../pages/LoginPage";
 import RegistrationPage from "../pages/RegistrationPage";
+import AddCar from "../pages/AddCar";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -14,6 +16,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <HomePage />
+            },
+            {
+                path: "/add-car",
+                element: <PrivateRoute><AddCar /></PrivateRoute>
             },
             {
                 path: "/log-in",
