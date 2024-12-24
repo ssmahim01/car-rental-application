@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logOutUser } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogOut = () => {
     logOutUser()
@@ -15,6 +16,8 @@ const Navbar = () => {
         showConfirmButton: false,
         timer: 2500
       });
+
+      navigate("/");
     })
   };
 

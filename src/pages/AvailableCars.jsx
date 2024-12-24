@@ -24,10 +24,10 @@ const AvailableCars = () => {
         {/* Search Bar */}
         <input
           type="text"
-          placeholder="Search by Model, Brand, or Location"
+          placeholder="Search by Location"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="input input-bordered input-info w-full max-w-sm"
+          className="input input-bordered input-info w-full lg:max-w-sm max-w-xs"
         />
       </div>
 
@@ -63,7 +63,7 @@ const AvailableCars = () => {
       {/* Display Cars */}
       {cars.length === 0 ? (
         <div className="text-center">
-          <p className="text-xl text-red-500">No cars available</p>
+          <p className="text-2xl text-red-500 font-bold">No cars available</p>
         </div>
       ) : (
         <div
@@ -79,7 +79,7 @@ const AvailableCars = () => {
               className={`${
                 viewType === "grid"
                   ? "card bg-cyan-50 shadow-md border border-gray-300 p-4 rounded-xl"
-                  : "border border-gray-200 flex md:flex-row flex-col-reverse md:justify-between justify-center items-center bg-purple-50 shadow-md p-4 rounded-lg"
+                  : "border border-gray-200 flex md:flex-row flex-col-reverse justify-between md:items-center items-start bg-purple-50 shadow-md p-4 rounded-lg"
               }`}
             >
               {/* Car Image */}
@@ -89,15 +89,19 @@ const AvailableCars = () => {
                 className={`${
                   viewType === "grid"
                     ? "w-full h-48 object-cover rounded-lg mb-4"
-                    : "w-56 h-48 object-cover rounded-lg"
+                    : "md:mt-0 mt-5 md:w-56 md:h-48 w-full object-cover rounded-lg"
                 }`}
               />
 
               {/* Car Details */}
-              <div className={`${viewType === "grid" ? "flex-1" : "mr-4"}`}>
+              <div className={`${viewType === "grid" ? "flex-1" : "md:mr-4"}`}>
                 <h3 className="text-2xl font-bold">{car?.model}</h3>
                 <p className="text-gray-600">
                   <span className="text-lg text-gray-800 font-semibold">Brand:</span> {car?.model}
+                </p>
+                <p className="text-gray-600">
+                  <span className="text-lg text-gray-800 font-semibold">Date Added:</span>{" "}
+                  {car?.dateAdded}
                 </p>
                 <p className="text-gray-600">
                   <span className="text-lg text-gray-800 font-semibold">Location:</span>{" "}
