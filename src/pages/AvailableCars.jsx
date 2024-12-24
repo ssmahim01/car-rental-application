@@ -13,7 +13,10 @@ const AvailableCars = () => {
       `${import.meta.env.VITE_UNIQUE_URL}/available-cars?sortType=${sorted}&search=${searchTerm}`
     )
       .then((res) => res.json())
-      .then((data) => setCars(data))
+      .then((data) => {
+        const filter = data.filter(singleData => singleData.availability);
+        setCars(filter);
+      })
   }, [sorted, searchTerm]);
  
   return (

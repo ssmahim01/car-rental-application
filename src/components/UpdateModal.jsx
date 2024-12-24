@@ -7,15 +7,16 @@ const UpdateModal = ({ car, cars, setCars }) => {
   const {
     model: carModel,
     price: carPrice,
-    availability,
     registrationNumber: carRegistrationNumber,
     features: carFeatures,
     description: carDescription,
     image: carImage,
     location: locationArea,
   } = car || {};
+  console.log(car);
 
-  const [newAvailability, setNewAvailability] = useState(availability || false);
+  const [newAvailability, setNewAvailability] = useState(car?.availability || {});
+  // console.log(newAvailability, car?.availability);
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -133,7 +134,7 @@ const UpdateModal = ({ car, cars, setCars }) => {
               <input
                 type="checkbox"
                 name="availability"
-                checked={newAvailability}
+                checked={newAvailability || car?.availability}
                 onChange={(e) => setNewAvailability(e.target.checked)}
                 className="checkbox checkbox-primary"
               />

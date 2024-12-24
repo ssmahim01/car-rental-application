@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import UpdateModal from "../components/UpdateModal";
 import Swal from "sweetalert2";
+import TableRow from "../components/TableRow";
 
 const MyCars = () => {
   const { user } = useAuth();
   const [cars, setCars] = useState([]);
   const [sorted, setSorted] = useState("");
-  const [selectedCar, setSelectedCar] = useState(null);
+  const [selectedCar, setSelectedCar] = useState({});
   // //   console.log(sorted);
   // //   console.log(cars);
 
@@ -23,6 +24,7 @@ const MyCars = () => {
   }, [user?.email, sorted]);
 
   const handleUpdateCar = (car) => {
+    console.log(car);
     setSelectedCar(car);
     document.getElementById("update_modal").showModal();
   };
@@ -130,38 +132,7 @@ const MyCars = () => {
             </thead>
             <tbody>
               {cars.map((car, index) => (
-                <tr
-                  key={car._id}
-                  className="hover *:text-gray-700 *:font-semibold"
-                >
-                  <th>{index + 1}</th>
-                  <td>
-                    <img
-                      className="w-14 h-10 rounded-lg object-cover"
-                      src={car?.image}
-                      alt={car?.model}
-                    />
-                  </td>
-                  <td>{car?.model}</td>
-                  <td>{car?.price}</td>
-                  <td>{car?.availability ? "Available" : "Unavailable"}</td>
-                  <td>{car?.dateAdded}</td>
-                  <td className="flex gap-2 items-center">
-                    <button
-                      onClick={() => handleUpdateCar(car)}
-                      className="bg-cyan-500 text-white rounded-xl font-semibold py-2 px-4"
-                    >
-                      Update
-                    </button>
-
-                    <button
-                      onClick={() => handleDelete(car?._id)}
-                      className="bg-rose-500 text-white rounded-xl font-semibold py-2 px-4"
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
+                <TableRow key={car?._id} car={car} index={index} handleUpdateCar={handleUpdateCar} handleDelete={handleDelete} />
               ))}
             </tbody>
           </table>

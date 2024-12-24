@@ -8,6 +8,7 @@ import AddCar from "../pages/AddCar";
 import PrivateRoute from "./PrivateRoute";
 import MyCars from "../pages/MyCars";
 import AvailableCars from "../pages/AvailableCars";
+import CarDetails from "../pages/CarDetails";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
             {
                 path: "/available-cars",
                 element: <AvailableCars />
+            },
+            {
+                path: "/car-details/:id",
+                loader: ({params}) => fetch(`${import.meta.env.VITE_UNIQUE_URL}/car/${params.id}`),
+                element: <CarDetails />
             },
             {
                 path: "/add-car",
