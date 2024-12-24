@@ -1,4 +1,6 @@
 import Banner from "../components/Banner";
+import RecentListings from "../components/RecentListings";
+import SpecialOffers from "../components/SpecialOffers";
 import WhyChooseUs from "../components/WhyChooseUs";
 
 const HomePage = () => {
@@ -9,6 +11,10 @@ const HomePage = () => {
 
             {/* Why Choose Us Section */}
             <WhyChooseUs />
+
+            {/* Recent Listings Section */}
+            <RecentListings />
+
         </div>
     );
 };

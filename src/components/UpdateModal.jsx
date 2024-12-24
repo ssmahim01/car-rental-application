@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 const UpdateModal = ({ car, cars, setCars }) => {
@@ -15,8 +15,13 @@ const UpdateModal = ({ car, cars, setCars }) => {
   } = car || {};
   console.log(car);
 
-  const [newAvailability, setNewAvailability] = useState(car?.availability || {});
-  // console.log(newAvailability, car?.availability);
+  const [newAvailability, setNewAvailability] = useState(false);
+  // console.log(newAvailability);
+
+  useEffect(() => {
+    setNewAvailability(car?.availability);
+    // console.log(car?.availability);
+  }, [car]);
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -134,7 +139,7 @@ const UpdateModal = ({ car, cars, setCars }) => {
               <input
                 type="checkbox"
                 name="availability"
-                checked={newAvailability || car?.availability}
+                checked={newAvailability}
                 onChange={(e) => setNewAvailability(e.target.checked)}
                 className="checkbox checkbox-primary"
               />

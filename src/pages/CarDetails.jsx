@@ -3,12 +3,15 @@ import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../hooks/useAuth";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const CarDetails = () => {
   //   const { id } = useParams();
   const { user } = useAuth();
   const carData = useLoaderData();
   const [modalOpen, setModalOpen] = useState(false);
+  const [startDate, setStartDate] = useState(new Date());
 
   const { model, price, availability, features, image, description } =
     carData || {};
@@ -26,7 +29,7 @@ const CarDetails = () => {
   };
 
   const handleBookNow = async () => {
-    const bookingDate = new Date().toISOString();
+    const bookingDate = startDate;
     const userInfo = {
       name: user?.displayName,
       email: user?.email,
@@ -153,6 +156,14 @@ const CarDetails = () => {
                   Description:{" "}
                   <span className="text-gray-500">{description}</span>
                 </p>
+
+                <div className="form-control">
+              <label className="label">
+                <span className="label-text font-bold">Booking Date</span>
+              </label>
+              <DatePicker className="input input-bordered w-full" selected={startDate} onChange={(date) => setStartDate(date)} />
+            </div>
+
                 <div className="py-3 flex gap-4 justify-center items-center">
                   <button
                     onClick={handleBookNow}

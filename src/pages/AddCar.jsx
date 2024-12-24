@@ -15,6 +15,7 @@ const AddCar = () => {
     const registrationNumber = e.target.registrationNumber.value;
     const features = e.target.features.value;
     const description = e.target.description.value;
+    let bookingCount = e.target.bookingCount.value;
     let image = e.target.image.value;
     const location = e.target.location.value;
     const userDetails = {
@@ -31,7 +32,7 @@ const AddCar = () => {
       features,
       description,
       userDetails,
-      bookingCount: 0,
+      bookingCount,
       bookingStatus: availability === true ? "Available" : "Not Available",
       dateAdded: new Date().toLocaleDateString(),
       image,
@@ -159,6 +160,7 @@ const AddCar = () => {
             </div>
           </div>
 
+          <div className="flex gap-4 md:flex-row flex-col *:w-full">
           <div className="form-control">
             <label className="label">
               <span className="label-text font-bold">Description</span>
@@ -166,8 +168,24 @@ const AddCar = () => {
             <textarea
               name="description"
               placeholder="Write your Description"
-              className="textarea textarea-bordered textarea-md md:w-1/2"
+              className="textarea textarea-bordered"
             ></textarea>
+          </div>
+
+          <div className="form-control">
+              <label className="label">
+                <span className="label-text font-bold">Booking Count</span>
+              </label>
+              <input
+                type="number"
+                name="bookingCount"
+                value={0}
+                readOnly
+                placeholder="Booking Count"
+                className="input input-bordered"
+                required
+              />
+            </div>
           </div>
 
           <div className="flex gap-4 md:flex-row flex-col items-center *:w-full">
