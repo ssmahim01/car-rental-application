@@ -68,7 +68,7 @@ const UpdateModal = ({ car, cars, setCars }) => {
 
           const updateCars = cars.map((singleCar) =>
             singleCar?._id === car?._id
-              ? { ...singleCar, ...updateCarInfo }
+              ? { ...car, ...updateCarInfo }
               : singleCar
           );
 

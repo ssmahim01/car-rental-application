@@ -81,7 +81,7 @@ const AvailableCars = () => {
               key={car._id}
               className={`${
                 viewType === "grid"
-                  ? "card bg-cyan-50 shadow-md border border-gray-300 p-4 rounded-xl"
+                  ? "card bg-slate-50 shadow-md border border-gray-300 p-4 rounded-xl"
                   : "border border-gray-200 flex md:flex-row flex-col-reverse justify-between md:items-center items-start bg-purple-50 shadow-md p-4 rounded-lg"
               }`}
             >

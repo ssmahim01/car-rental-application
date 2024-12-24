@@ -15,6 +15,8 @@ const HomePage = () => {
             {/* Recent Listings Section */}
             <RecentListings />
 
+            {/* Special Offers Section */}
+            <SpecialOffers />
         </div>
     );
 };

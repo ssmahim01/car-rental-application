@@ -51,8 +51,11 @@ const MyCars = () => {
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
+                position: "center",
                 text: "Your car has been deleted.",
                 icon: "success",
+                timer: 2500,
+                showConfirmButton: false
               });
               const remainingCars = cars.filter((car) => car._id !== id);
               setCars(remainingCars);
