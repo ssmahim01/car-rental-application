@@ -9,6 +9,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import auth from "../firebase/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 
@@ -55,7 +56,18 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false);
+
+      if(currentUser?.email){
+        const user = {email: currentUser.email};
+
+        axios.post(`${import.meta.env.VITE_UNIQUE_URL}/jwt-access`, user, {withCredentials: true})
+
+        setLoading(false);
+      }else{
+        axios.post(`${import.meta.env.VITE_UNIQUE_URL}/log-out`, {}, {withCredentials: true})
+
+        setLoading(false);
+      }
     });
 
     return () => {
