@@ -83,7 +83,7 @@ const MyCars = () => {
 
   return (
     <div className="mt-5 mb-12">
-      <div className="lg:px-12 px-8 flex justify-between items-center mb-5">
+      <div className="lg:px-12 px-8 flex justify-between items-center mb-7">
         <h2 className="md:text-3xl text-2xl font-bold">My Cars</h2>
 
         {cars.length !== 0 && (
@@ -107,7 +107,7 @@ const MyCars = () => {
 
       {cars.length === 0 && (
         <div className="flex flex-col justify-center items-center gap-y-3">
-          <p className="md:text-2xl text-xl text-rose-600 font-semibold">
+          <p className="md:text-2xl text-xl text-rose-600 font-bold">
             You did not added any cars
           </p>
 
@@ -123,7 +123,7 @@ const MyCars = () => {
         <div className="overflow-x-auto lg:px-12 px-6">
           <table className="table">
             <thead>
-              <tr className="bg-secondary *:text-white *:font-bold">
+              <tr className="bg-neutral *:text-white *:font-bold">
                 <th>No.</th>
                 <th>Car Image</th>
                 <th>Car Model</th>

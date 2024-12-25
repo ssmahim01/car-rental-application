@@ -3,46 +3,53 @@ import Swal from "sweetalert2";
 
 const UpdateModal = ({ car, cars, setCars }) => {
   // const [cars, setCars] = useState([]);
+  // console.log(car, cars);
 
   const {
-    model: carModel,
-    price: carPrice,
-    registrationNumber: carRegistrationNumber,
-    features: carFeatures,
-    description: carDescription,
-    image: carImage,
-    location: locationArea,
+    model,
+    price,
+    registrationNumber,
+    features,
+    description,
+    image,
+    location
   } = car || {};
-  console.log(car);
+  // console.log(car);
 
+  const [carModel, setCarModel] = useState("");
+  const [carPrice, setCarPrice] = useState("");
+  const [carRegistrationNumber, setCarRegistrationNumber] = useState("");
   const [newAvailability, setNewAvailability] = useState(false);
+  const [carFeatures, setCarFeatures] = useState("");
+  const [carDescription, setCarDescription] = useState("");
+  const [carImage, setCarImage] = useState("");
+  const [locationArea, setLocationArea] = useState("");
   // console.log(newAvailability);
 
   useEffect(() => {
+    setCarModel(model);
+    setCarPrice(price);
     setNewAvailability(car?.availability);
+    setCarRegistrationNumber(registrationNumber);
+    setCarFeatures(features);
+    setCarDescription(description);
+    setCarImage(image);
+    setLocationArea(location);
     // console.log(car?.availability);
   }, [car]);
 
   const handleUpdate = (e) => {
     e.preventDefault();
 
-    const model = e.target.model.value;
-    const price = e.target.price.value;
-    const registrationNumber = e.target.registrationNumber.value;
-    const features = e.target.features.value;
-    const description = e.target.description.value;
-    const image = e.target.image.value;
-    const location = e.target.location.value;
-
     const updateCarInfo = {
-      model,
-      price,
+      model: carModel,
+      price: carPrice,
       availability: newAvailability,
-      registrationNumber,
-      features,
-      description,
-      image,
-      location,
+      registrationNumber: carRegistrationNumber,
+      features: carFeatures,
+      description: carDescription,
+      image: carImage,
+      location: locationArea,
     };
 
     fetch(`${import.meta.env.VITE_UNIQUE_URL}/update-car/${car?._id}`, {
@@ -108,7 +115,8 @@ const UpdateModal = ({ car, cars, setCars }) => {
               <input
                 type="text"
                 name="model"
-                defaultValue={carModel}
+                value={carModel}
+                onChange={(e) => setCarModel(e.target.value)}
                 placeholder="Provide Car Model"
                 className="input input-bordered"
                 required
@@ -122,7 +130,8 @@ const UpdateModal = ({ car, cars, setCars }) => {
               <input
                 type="number"
                 name="price"
-                defaultValue={carPrice}
+                value={carPrice}
+                onChange={(e) => setCarPrice(e.target.value)}
                 placeholder="Daily Rental Price"
                 className="input input-bordered"
                 required
@@ -159,7 +168,8 @@ const UpdateModal = ({ car, cars, setCars }) => {
               <input
                 type="text"
                 name="registrationNumber"
-                defaultValue={carRegistrationNumber}
+                value={carRegistrationNumber}
+                onChange={(e) => setCarRegistrationNumber(e.target.value)}
                 placeholder="Vehicle Registration Number"
                 className="input input-bordered"
                 required
@@ -173,7 +183,8 @@ const UpdateModal = ({ car, cars, setCars }) => {
               <input
                 type="text"
                 name="features"
-                defaultValue={carFeatures}
+                value={carFeatures}
+                onChange={(e) => setCarFeatures(e.target.value)}
                 placeholder="Features (e.g., GPS, AC, etc.)"
                 className="input input-bordered"
                 required
@@ -187,7 +198,8 @@ const UpdateModal = ({ car, cars, setCars }) => {
             </label>
             <textarea
               name="description"
-              defaultValue={carDescription}
+              value={carDescription}
+                onChange={(e) => setCarDescription(e.target.value)}
               placeholder="Write your Description"
               className="textarea textarea-bordered textarea-md"
             ></textarea>
@@ -201,7 +213,8 @@ const UpdateModal = ({ car, cars, setCars }) => {
               <input
                 type="url"
                 name="image"
-                defaultValue={carImage}
+                value={carImage}
+                onChange={(e) => setCarImage(e.target.value)}
                 placeholder="Provide URL of image"
                 className="input input-bordered"
                 required
@@ -215,7 +228,8 @@ const UpdateModal = ({ car, cars, setCars }) => {
               <input
                 type="text"
                 name="location"
-                defaultValue={locationArea}
+                value={locationArea}
+                onChange={(e) => setLocationArea(e.target.value)}
                 placeholder="Provide a location"
                 className="input input-bordered"
                 required

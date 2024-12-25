@@ -6,7 +6,7 @@ const SpecialOffers = () => {
   const [offers, setOffers] = useState([]);
 
   useEffect(() => {
-    fetch("/public/specialOffers.json")
+    fetch("specialOffers.json")
       .then((res) => res.json())
       .then((data) => setOffers(data));
   }, []);

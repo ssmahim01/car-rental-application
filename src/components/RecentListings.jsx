@@ -57,6 +57,11 @@ const RecentListings = () => {
               </p>
 
               <p className="text-lg text-gray-800 font-bold">
+                Booking_count:{" "}
+                <span className="text-gray-600">{car?.bookingCount}</span>
+              </p>
+
+              <p className="text-lg text-gray-800 font-bold">
                 Date Posted:{" "}
                 <span className="text-gray-600">
                   Added{" "}

@@ -104,7 +104,7 @@ const AvailableCars = () => {
                 </p>
                 <p className="text-gray-600">
                   <span className="text-lg text-gray-800 font-semibold">Date Added:</span>{" "}
-                  {car?.dateAdded}
+                  {new Date(car?.dateAdded).toLocaleDateString()}
                 </p>
                 <p className="text-gray-600">
                   <span className="text-lg text-gray-800 font-semibold">Location:</span>{" "}

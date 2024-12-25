@@ -7,18 +7,17 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogOut = () => {
-    logOutUser()
-    .then(() => {
+    logOutUser().then(() => {
       Swal.fire({
         position: "top-center",
         icon: "success",
         title: "Logged out successfully",
         showConfirmButton: false,
-        timer: 2500
+        timer: 2500,
       });
 
       navigate("/");
-    })
+    });
   };
 
   const routes = (
@@ -52,14 +51,23 @@ const Navbar = () => {
           <li className="lg:block hidden">|</li>
 
           <li>
-            <button onClick={handleLogOut} className="text-rose-600 font-bold">Logout</button>
+            <button onClick={handleLogOut} className="text-rose-600 font-bold">
+              Logout
+            </button>
           </li>
+          <div className="tooltip tooltip-bottom" data-tip={`${user?.displayName}`}>
+            <img
+              className="hidden lg:block w-10 h-10 rounded-full border-4 border-warning"
+              src={user?.photoURL}
+              alt={user?.displayName}
+            />
+          </div>
         </>
       )}
     </div>
   );
   return (
-    <div className="navbar justify-between bg-base-100 shadow-md fixed z-10 lg:px-10 px-6">
+    <div className="navbar justify-between bg-base-100 shadow-md fixed z-10 lg:px-14 px-6">
       <div className="navbar-start">
         <div className="flex gap-2 items-center">
           <img
@@ -95,6 +103,13 @@ const Navbar = () => {
           tabIndex={0}
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-56 p-2 right-2 shadow-md *:text-gray-700 *:font-bold"
         >
+          <div className="tooltip tooltip-bottom" data-tip={`${user?.displayName}`}>
+          <img
+            className="block mx-auto lg:hidden mb-4 w-14 h-14 rounded-full border-4 border-warning"
+            src={user?.photoURL}
+            alt={user?.displayName}
+          />
+          </div>
           {routes}
         </ul>
       </div>

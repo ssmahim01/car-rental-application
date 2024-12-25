@@ -34,7 +34,7 @@ const AddCar = () => {
       userDetails,
       bookingCount,
       bookingStatus: availability === true ? "Available" : "Not Available",
-      dateAdded: new Date().toLocaleDateString(),
+      dateAdded: new Date().toISOString(),
       image,
       location,
     };
