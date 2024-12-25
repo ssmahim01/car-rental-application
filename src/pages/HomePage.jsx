@@ -1,4 +1,5 @@
 import Banner from "../components/Banner";
+import FindBestCars from "../components/FindBestCars";
 import RecentListings from "../components/RecentListings";
 import SpecialOffers from "../components/SpecialOffers";
 import WhyChooseUs from "../components/WhyChooseUs";
@@ -14,6 +15,9 @@ const HomePage = () => {
 
             {/* Recent Listings Section */}
             <RecentListings />
+
+            {/* Find Best Cars Section */}
+            <FindBestCars />
 
             {/* Special Offers Section */}
             <SpecialOffers />

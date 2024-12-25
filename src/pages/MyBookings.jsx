@@ -93,7 +93,7 @@ const MyBookings = () => {
   }, [user?.email, selectedBooking]);
 
   return (
-    <div className="mt-5 mb-12">
+    <div className="mt-8 mb-12">
       <h2 className="md:text-4xl text-3xl text-center font-bold mb-6">
         My Bookings
       </h2>

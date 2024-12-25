@@ -82,7 +82,7 @@ const MyCars = () => {
   // }, [sorted]);
 
   return (
-    <div className="mt-5 mb-12">
+    <div className="mt-8 mb-12">
       <div className="lg:px-12 px-8 flex justify-between items-center mb-7">
         <h2 className="md:text-3xl text-2xl font-bold">My Cars</h2>
 

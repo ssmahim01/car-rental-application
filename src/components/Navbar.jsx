@@ -55,11 +55,15 @@ const Navbar = () => {
               Logout
             </button>
           </li>
-          <div className="tooltip tooltip-bottom" data-tip={`${user?.displayName}`}>
+          <div
+            className="tooltip tooltip-bottom"
+            data-tip={`${user?.displayName}`}
+          >
             <img
               className="hidden lg:block w-12 h-12 rounded-full border-4 border-warning"
               src={user?.photoURL}
               alt={user?.displayName}
+              referrerPolicy="no-referrer"
             />
           </div>
         </>
@@ -103,12 +107,18 @@ const Navbar = () => {
           tabIndex={0}
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-56 p-2 right-2 shadow-md *:text-gray-700 *:font-bold"
         >
-          <div className="tooltip tooltip-bottom" data-tip={`${user?.displayName}`}>
-          {user && <img
-            className="block mx-auto lg:hidden mb-4 w-14 h-14 rounded-full border-4 border-warning"
-            src={user?.photoURL}
-            alt={user?.displayName}
-          />}
+          <div
+            className="tooltip tooltip-bottom"
+            data-tip={`${user?.displayName}`}
+          >
+            {user && (
+              <img
+                className="block mx-auto lg:hidden mb-4 w-14 h-14 rounded-full border-4 border-warning"
+                src={user?.photoURL}
+                referrerPolicy="no-referrer"
+                alt={user?.displayName}
+              />
+            )}
           </div>
           {routes}
         </ul>
