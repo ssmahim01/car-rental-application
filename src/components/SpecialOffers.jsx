@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -28,8 +28,9 @@ const SpecialOffers = () => {
               offer?.title === "Free GPS with Any Rental!" && "bg-purple-500"
             } rounded-xl shadow-md p-6 transition-all space-y-2 *:text-white/90 text-center`}
             initial={{ opacity: 0, x: -200 }}
+            whileHover={{ scale: 1.1 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 4, delay: index * 0.3 }}
+            transition={{ duration: 4, delay: index * 0.3, ease: "easeInOut"}}
           >
             <h2 className="text-xl font-bold">🎉{offer?.title}🎉</h2>
             <p className="text-sm">{offer?.description}</p>

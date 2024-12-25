@@ -45,6 +45,7 @@ const CarDetails = () => {
       image,
       description,
       userInfo,
+      status: "Pending"
     };
 
     const { data } = await axios.post(
