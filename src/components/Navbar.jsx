@@ -57,7 +57,7 @@ const Navbar = () => {
           </li>
           <div className="tooltip tooltip-bottom" data-tip={`${user?.displayName}`}>
             <img
-              className="hidden lg:block w-10 h-10 rounded-full border-4 border-warning"
+              className="hidden lg:block w-12 h-12 rounded-full border-4 border-warning"
               src={user?.photoURL}
               alt={user?.displayName}
             />
@@ -104,11 +104,11 @@ const Navbar = () => {
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-56 p-2 right-2 shadow-md *:text-gray-700 *:font-bold"
         >
           <div className="tooltip tooltip-bottom" data-tip={`${user?.displayName}`}>
-          <img
+          {user && <img
             className="block mx-auto lg:hidden mb-4 w-14 h-14 rounded-full border-4 border-warning"
             src={user?.photoURL}
             alt={user?.displayName}
-          />
+          />}
           </div>
           {routes}
         </ul>

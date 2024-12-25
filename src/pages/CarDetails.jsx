@@ -12,6 +12,7 @@ const CarDetails = () => {
   const carData = useLoaderData();
   const [modalOpen, setModalOpen] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
 
   const { model, price, availability, features, image, description } =
     carData || {};
@@ -29,7 +30,9 @@ const CarDetails = () => {
   };
 
   const handleBookNow = async () => {
-    const bookingDate = startDate;
+    const bookingStartDate = startDate;
+    const bookingEndDate = endDate;
+
     const userInfo = {
       name: user?.displayName,
       email: user?.email,
@@ -40,7 +43,8 @@ const CarDetails = () => {
       model,
       price,
       availability,
-      bookingDate,
+      bookingStartDate,
+      bookingEndDate,
       features,
       image,
       description,
@@ -74,7 +78,7 @@ const CarDetails = () => {
           </h2>
 
           <p className="text-gray-800 md:text-xl text-lg font-semibold">
-            Price Per Day: <span className="text-gray-600">{price}</span>
+            Price Per Day: <span className="text-gray-600">${price}/day</span>
           </p>
 
           <p className="text-gray-800 md:text-xl text-lg font-semibold">
@@ -135,7 +139,7 @@ const CarDetails = () => {
                 </h2>
 
                 <p className="text-gray-800 md:text-xl text-lg font-semibold">
-                  Price Per Day: <span className="text-gray-600">{price}</span>
+                  Price Per Day: <span className="text-gray-600">${price}/day</span>
                 </p>
 
                 <p className="text-gray-800 md:text-xl text-lg font-semibold">
@@ -160,9 +164,16 @@ const CarDetails = () => {
 
                 <div className="form-control">
               <label className="label">
-                <span className="label-text font-bold">Booking Date</span>
+                <span className="label-text font-bold">Booking Start Date</span>
               </label>
               <DatePicker className="input input-bordered w-full" selected={startDate} onChange={(date) => setStartDate(date)} />
+            </div>
+
+                <div className="form-control">
+              <label className="label">
+                <span className="label-text font-bold">Booking End Date</span>
+              </label>
+              <DatePicker className="input input-bordered w-full" selected={endDate} onChange={(date) => setEndDate(date)} />
             </div>
 
                 <div className="py-3 flex gap-4 justify-center items-center">

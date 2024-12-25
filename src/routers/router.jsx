@@ -28,7 +28,7 @@ const router = createBrowserRouter([
             {
                 path: "/car-details/:id",
                 loader: ({params}) => fetch(`${import.meta.env.VITE_UNIQUE_URL}/car/${params.id}`),
-                element: <CarDetails />
+                element: <PrivateRoute><CarDetails /></PrivateRoute>
             },
             {
                 path: "/add-car",

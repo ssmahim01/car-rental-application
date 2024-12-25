@@ -12,7 +12,7 @@ const TableRow = ({car, index, handleUpdateCar, handleDelete }) => {
         />
       </td>
       <td>{car?.model}</td>
-      <td>{car?.price}</td>
+      <td>${car?.price}</td>
       <td>{car?.availability ? "Available" : "Unavailable"}</td>
       <td>{new Date(car?.dateAdded).toLocaleDateString()}</td>
       <td className="flex gap-2 items-center">
