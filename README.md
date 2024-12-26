@@ -1,5 +1,7 @@
-# Car Rental Client
-<br>
+# Project Name
+
+<b>Car Rental Client</b>
+<hr>
 
 # Purpose
 
@@ -11,7 +13,7 @@
 <li>Users can view their bookings, check details like price, rental duration, and booking status.</li>
 <li>They can modify booking dates if required.</li>
 
-<li>Transparency:
+<li><b>Transparency:</b>
 Users see daily rental prices clearly.
 They get insights into the total cost based on the rental duration.</li>
 <li><b>Ease of Interaction:</b> 
