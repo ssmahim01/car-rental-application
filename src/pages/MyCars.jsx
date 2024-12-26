@@ -89,9 +89,9 @@ const MyCars = () => {
   // }, [sorted]);
 
   return (
-    <div className="mt-8 mb-12">
+    <div className="pt-8 pb-12 bg-white">
       <div className="lg:px-12 px-8 flex justify-between items-center mb-7">
-        <h2 className="md:text-3xl text-2xl font-bold">My Cars</h2>
+        <h2 className="md:text-4xl text-3xl font-bold">My Cars</h2>
 
         {cars.length !== 0 && (
           <select
@@ -114,8 +114,8 @@ const MyCars = () => {
 
       {cars.length === 0 && (
         <div className="flex flex-col justify-center items-center gap-y-3">
-          <p className="md:text-2xl text-xl text-rose-600 font-bold">
-            You did not added any cars
+          <p className="md:text-2xl text-lg text-rose-600 text-center font-bold">
+            You did not added any cars, Go to add car page
           </p>
 
           <Link to="/add-car">
@@ -135,6 +135,7 @@ const MyCars = () => {
                 <th>Car Image</th>
                 <th>Car Model</th>
                 <th>Daily Rental Price</th>
+                <th>Booking Count</th>
                 <th>Availability</th>
                 <th>Date Added</th>
                 <th>Actions</th>

@@ -2,9 +2,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
+import SharedLogin from "../components/SharedLogin";
 
 const RegistrationPage = () => {
-  const { registerUser, updateUserProfile, logOutUser } = useAuth();
+  const { registerUser, updateUserProfile, loginWithGoogle, logOutUser } = useAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -58,6 +59,28 @@ const RegistrationPage = () => {
     })
   };
 
+   const handleGoogleLogin = () => {
+      setError("");
+  
+      loginWithGoogle()
+        .then((credentials) => {
+          const user = credentials?.user;
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: `${user?.displayName} is successfully logged in with Google`,
+            showConfirmButton: false,
+            timer: 2500,
+          });
+          navigate("/");
+        })
+        .catch((error) => {
+          // console.log(error.message);
+  
+          setError("Failed to Log-in with Google");
+        });
+    };
+
   return (
     <div className="pt-7 pb-14 flex flex-col justify-center items-center">
       <div className="text-center mb-6 space-y-2 lg:w-2/6 md:w-3/4 w-11/12">
@@ -69,6 +92,12 @@ const RegistrationPage = () => {
       </div>
 
       <div className="border border-gray-200 card bg-base-100 lg:w-2/5 md:w-3/4 w-11/12 mx-auto shadow-md rounded-lg">
+        <div className="pt-8">
+        <SharedLogin handleGoogleLogin={handleGoogleLogin} />
+        </div>
+
+        <div className="w-11/12 mx-auto divider text-gray-600 font-medium">Or register with Email</div>
+        
         {error && (
           <p className="mt-5 text-center text-rose-600 font-semibold">
             {error}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div
-      className="hero lg:h-[480px] md:h-72 h-64 mt-0 mb-8 bg-cover bg-center bg-no-repeat"
+      className="hero lg:h-[480px] md:h-80 h-72 mt-0 mb-8 bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage:
           "url('car-rent-bg.jpg')",

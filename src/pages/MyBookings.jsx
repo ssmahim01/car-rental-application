@@ -111,7 +111,7 @@ const MyBookings = () => {
   }, [user?.email, selectedBooking]);
 
   return (
-    <div className="mt-8 mb-12">
+    <div className="pt-8 pb-12 bg-white">
       <h2 className="md:text-4xl text-3xl text-center font-bold mb-6">
         My Bookings
       </h2>
@@ -222,14 +222,14 @@ const MyBookings = () => {
         <div className="overflow-x-auto lg:px-12 px-6">
           <table className="table border border-gray-200 border-collapse">
             <thead>
-              <tr className="bg-gray-200 *:text-gray-800 *:font-bold">
-                <th>Serial No.</th>
-                <th>Car Image</th>
-                <th>Car Model</th>
-                <th>Booking Date</th>
-                <th>Total Price</th>
-                <th>Status</th>
-                <th>Actions</th>
+              <tr className="bg-gray-100 *:text-gray-800 *:font-bold">
+                <th className="p-4">Serial No.</th>
+                <th className="p-4">Car Image</th>
+                <th className="p-4">Car Model</th>
+                <th className="p-4">Booking Date</th>
+                <th className="p-4">Total Price</th>
+                <th className="p-4">Booking Status</th>
+                <th className="p-4">Actions</th>
               </tr>
             </thead>
             <tbody>

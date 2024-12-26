@@ -12,7 +12,7 @@ const SpecialOffers = () => {
   }, []);
 
   return (
-    <div className="my-14 lg:px-12 px-6">
+    <div className="py-14 lg:px-12 px-6">
       <h2 className="md:text-4xl text-3xl text-center font-extrabold mb-8">
         🎊Special Offers🎊
       </h2>

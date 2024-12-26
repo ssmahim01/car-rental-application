@@ -11,7 +11,6 @@ const CarDetails = () => {
   //   const { id } = useParams();
   const { user } = useAuth();
   const carData = useLoaderData();
-  const [modalOpen, setModalOpen] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
@@ -29,7 +28,6 @@ const CarDetails = () => {
   //   console.log(id, carData);
 
   const handleBook = () => {
-    setModalOpen(true);
     if (user?.email === userDetails?.email) {
       Swal.fire({
         position: "center",
@@ -45,7 +43,6 @@ const CarDetails = () => {
   };
 
   const handleClose = () => {
-    setModalOpen(false);
     return document.getElementById("booking_modal").close();
   };
 
@@ -116,7 +113,7 @@ const CarDetails = () => {
   };
 
   return (
-    <div className="mt-6 mb-12 md:w-4/5 w-11/12 mx-auto">
+    <div className="mt-6 pb-12 md:w-4/5 w-11/12 mx-auto">
       <h2 className="md:text-3xl text-2xl text-center font-extrabold text-gray-800 mb-4">
         Car Details: {model}
       </h2>
@@ -177,7 +174,6 @@ const CarDetails = () => {
         </div>
       </div>
 
-      {modalOpen && (
         <dialog id="booking_modal" className="modal modal-middle">
           <div className="w-full flex justify-center items-center">
             <div className="modal-box">
@@ -268,7 +264,6 @@ const CarDetails = () => {
             </div>
           </div>
         </dialog>
-      )}
     </div>
   );
 };

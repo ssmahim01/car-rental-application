@@ -191,7 +191,7 @@ const AddCar = () => {
           <div className="flex gap-4 md:flex-row flex-col items-center *:w-full">
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-bold">Image</span>
+                <span className="label-text font-bold">Image URL</span>
               </label>
               <input
                 type="url"

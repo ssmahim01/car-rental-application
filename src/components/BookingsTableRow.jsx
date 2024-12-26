@@ -55,7 +55,9 @@ const BookingsTableRow = ({ booking, index, bookings, setBookings, handleModalOp
     };
 
   return (
-    <tr className="hover:bg-gray-100 transition-all *:text-gray-700 *:font-semibold">
+    <tr className={`${
+      index % 2 === 0 ? "bg-white" : "bg-gray-100"
+    } hover:shadow-lg hover:bg-gray-200 transition duration-200 text-gray-700 font-semibold`}>
       <th>{index + 1}</th>
       <td>
         <img

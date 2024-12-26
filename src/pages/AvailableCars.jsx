@@ -20,7 +20,7 @@ const AvailableCars = () => {
   }, [sorted, searchTerm]);
  
   return (
-    <div className="mt-8 mb-12">
+    <div className="mt-8 pb-12">
       <div className="flex flex-wrap md:flex-row flex-col md:justify-between justify-center items-center lg:px-12 px-8 mb-5">
         <h2 className="text-3xl font-bold md:mb-0 mb-4">Available Cars</h2>
 
@@ -99,9 +99,6 @@ const AvailableCars = () => {
               {/* Car Details */}
               <div className={`${viewType === "grid" ? "flex-1" : "md:mr-4"}`}>
                 <h3 className="text-2xl font-bold">{car?.model}</h3>
-                <p className="text-gray-600">
-                  <span className="text-lg text-gray-800 font-semibold">Brand:</span> {car?.model}
-                </p>
                 <p className="text-gray-600">
                   <span className="text-lg text-gray-800 font-semibold">Date Added:</span>{" "}
                   {new Date(car?.dateAdded).toLocaleDateString()}

@@ -15,7 +15,7 @@ const RootLayout = () => {
       <Navbar />
 
       {/* Outlet */}
-      <section className="pt-[70px] min-h-[calc(100vh-225px)]">
+      <section className="pt-[70px] min-h-[calc(100vh-225px)] bg-slate-100">
         <Outlet />
       </section>
 
