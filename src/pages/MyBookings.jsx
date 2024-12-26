@@ -12,6 +12,8 @@ import {
   BarChart,
   CartesianGrid,
   Legend,
+  Line,
+  LineChart,
   Rectangle,
   Tooltip,
   XAxis,
@@ -114,9 +116,9 @@ const MyBookings = () => {
         My Bookings
       </h2>
 
-       <div className="md:flex hidden justify-center items-center mb-6">
+       <div className="lg:flex hidden justify-between items-center mb-6 mr-6">
         <BarChart
-          width={900}
+          width={700}
           height={400}
           data={data}
           margin={{
@@ -137,9 +139,28 @@ const MyBookings = () => {
             activeBar={<Rectangle fill="pink" stroke="blue" />}
           />
         </BarChart>
-      </div>
 
-       <div className="pr-4 md:hidden flex justify-center items-center mb-6">
+      <LineChart
+          width={700}
+          height={400}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+          >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="model" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="Daily Rental Price" stroke="#8884d8" activeDot={{ r: 8 }} />
+        </LineChart>
+          </div>
+
+       <div className="pr-4 lg:hidden flex md:flex-row flex-col justify-center items-center gap-6 mb-6">
         <BarChart
         width={400}
           height={200}
@@ -162,6 +183,25 @@ const MyBookings = () => {
             activeBar={<Rectangle fill="pink" stroke="blue" />}
           />
         </BarChart>
+
+        <LineChart
+          width={400}
+          height={200}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+          >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="model" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="Daily Rental Price" stroke="#8884d8" activeDot={{ r: 8 }} />
+        </LineChart>
       </div>
 
       {bookings.length === 0 && (

@@ -65,8 +65,19 @@ const CarDetails = () => {
         position: "center",
         icon: "error",
         title: "You should not select dates less than older",
-        showConfirmButton: false,
-        timer: 2500,
+        confirmButtonText: "Okay",
+      });
+
+      document.getElementById("booking_modal").close();
+      return;
+    }
+
+    if (startDate >= endDate) {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "The Start Date must be earlier than the end date.",
+        confirmButtonText: "Okay",
       });
 
       document.getElementById("booking_modal").close();
