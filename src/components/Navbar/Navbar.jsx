@@ -1,6 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
+import { NavLink, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
+import "./Navbar.css";
 
 const Navbar = () => {
   const { user, logOutUser } = useAuth();
@@ -21,40 +22,26 @@ const Navbar = () => {
   };
 
   const routes = (
-    <div className="flex lg:flex-row flex-col lg:items-center">
-      <li>
-        <Link to="/">Home</Link>
-      </li>
+    <div className="flex lg:flex-row flex-col lg:items-center gap-3">
+        <NavLink to="/">Home</NavLink>
       <li className="lg:block hidden">|</li>
-      <li>
-        <Link to="/available-cars">Available Cars</Link>
-      </li>
+        <NavLink to="/available-cars">Available Cars</NavLink>
       <li className="lg:block hidden">|</li>
       {!user && (
-        <li>
-          <Link to="/log-in">Log-in</Link>
-        </li>
+          <NavLink to="/log-in">Log-in</NavLink>
       )}
       {user && (
         <>
-          <li>
-            <Link to="/add-car">Add Car</Link>
-          </li>
+            <NavLink to="/add-car">Add Car</NavLink>
           <li className="lg:block hidden">|</li>
-          <li>
-            <Link to="/my-cars">My Cars</Link>
-          </li>
+            <NavLink to="/my-cars">My Cars</NavLink>
           <li className="lg:block hidden">|</li>
-          <li>
-            <Link to="/my-bookings">My Bookings</Link>
-          </li>
+            <NavLink to="/my-bookings">My Bookings</NavLink>
           <li className="lg:block hidden">|</li>
 
-          <li>
             <button onClick={handleLogOut} className="text-rose-600 font-bold">
               Logout
             </button>
-          </li>
           <div
             className="tooltip tooltip-bottom"
             data-tip={`${user?.displayName}`}

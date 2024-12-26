@@ -4,23 +4,30 @@ import useAuth from "../hooks/useAuth";
 import UpdateModal from "../components/UpdateModal";
 import Swal from "sweetalert2";
 import TableRow from "../components/TableRow";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const MyCars = () => {
   const { user } = useAuth();
   const [cars, setCars] = useState([]);
   const [sorted, setSorted] = useState("");
   const [selectedCar, setSelectedCar] = useState({});
+  const secureAxios = useAxiosSecure();
+  // const [loading, setLoading] = useState(true);
   // //   console.log(sorted);
   // //   console.log(cars);
-
+  
+  const findOwnCarsData = async () => {
+    const { data } = await secureAxios.get(
+      `/my-cars?email=${user?.email}&sortType=${sorted}`,
+      { withCredentials: true }
+    );
+    setCars(data);
+  };
+  
+  
   useEffect(() => {
-    fetch(
-      `${import.meta.env.VITE_UNIQUE_URL}/my-cars?email=${
-        user?.email
-      }&sortType=${sorted}`
-    )
-      .then((res) => res.json())
-      .then((data) => setCars(data));
+    findOwnCarsData();
+    // setLoading(false);
   }, [user?.email, sorted]);
 
   const handleUpdateCar = (car) => {
@@ -55,7 +62,7 @@ const MyCars = () => {
                 text: "Your car has been deleted.",
                 icon: "success",
                 timer: 2500,
-                showConfirmButton: false
+                showConfirmButton: false,
               });
               const remainingCars = cars.filter((car) => car._id !== id);
               setCars(remainingCars);
@@ -112,7 +119,7 @@ const MyCars = () => {
           </p>
 
           <Link to="/add-car">
-            <button className="btn btn-success text-white font-bold hover:bg-emerald-500 hover:text-white rounded-full text-lg px-8">
+            <button className="btn btn-info text-white font-bold hover:bg-emerald-500 hover:text-white rounded-full text-lg px-8">
               Add a Car
             </button>
           </Link>
@@ -135,7 +142,13 @@ const MyCars = () => {
             </thead>
             <tbody>
               {cars.map((car, index) => (
-                <TableRow key={car?._id} car={car} index={index} handleUpdateCar={handleUpdateCar} handleDelete={handleDelete} />
+                <TableRow
+                  key={car?._id}
+                  car={car}
+                  index={index}
+                  handleUpdateCar={handleUpdateCar}
+                  handleDelete={handleDelete}
+                />
               ))}
             </tbody>
           </table>
@@ -143,7 +156,9 @@ const MyCars = () => {
       )}
 
       <dialog id="update_modal" className="modal modal-middle">
-        {selectedCar && <UpdateModal car={selectedCar} cars={cars} setCars={setCars} />}
+        {selectedCar && (
+          <UpdateModal car={selectedCar} cars={cars} setCars={setCars} />
+        )}
       </dialog>
     </div>
   );

@@ -66,14 +66,14 @@ const BookingsTableRow = ({ booking, index, bookings, setBookings, handleModalOp
       </td>
       <td>{booking?.model}</td>
       <td>
-        {booking?.bookingStartDate
+        Start: {booking?.bookingStartDate
           ? format(
               typeof booking?.bookingStartDate === "string"
                 ? new Date(booking?.bookingStartDate)
                 : booking?.bookingStartDate,
               "dd-MM-yyyy HH:mm"
             )
-          : "N/A"} - {booking?.bookingEndDate
+          : "N/A"} - End: {booking?.bookingEndDate
             ? format(
                 typeof booking?.bookingEndDate === "string"
                   ? new Date(booking?.bookingEndDate)
@@ -96,7 +96,7 @@ const BookingsTableRow = ({ booking, index, bookings, setBookings, handleModalOp
           {booking?.status}
         </span>
       </td>
-      <td className="flex gap-2 lg:pt-4 pt-8 w-72">
+      <td className="flex gap-2 lg:py-4 py-10 w-72">
         <button onClick={() => handleCanceledBooking(booking?._id)} className="inline-flex items-center gap-1 bg-red-500 text-white rounded-none font-semibold py-2 px-4" disabled={booking?.status === "Canceled"}>
           <FaTrashAlt /> Cancel
         </button>

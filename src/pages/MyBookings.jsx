@@ -1,5 +1,4 @@
 import BookingsTableRow from "../components/bookingsTableRow";
-import axios from "axios";
 import useAuth from "../hooks/useAuth";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -8,6 +7,16 @@ import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
 import { differenceInDays } from "date-fns";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  Rectangle,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 const MyBookings = () => {
   const axiosSecure = useAxiosSecure();
@@ -17,9 +26,16 @@ const MyBookings = () => {
   // console.log(bookings);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-  
+
+  const data = bookings.map(book => ({
+    model: book?.model,
+    'Daily Rental Price': book?.price
+  }))
   const handleTotalPrice = (booking) => {
-    const bookingPeriod = differenceInDays(new Date(booking?.bookingEndDate), new Date(booking?.bookingStartDate));
+    const bookingPeriod = differenceInDays(
+      new Date(booking?.bookingEndDate),
+      new Date(booking?.bookingStartDate)
+    );
     // console.log(bookingPeriod);
 
     const pricePerDay = booking?.price;
@@ -58,13 +74,12 @@ const MyBookings = () => {
             showConfirmButton: false,
           });
 
-          
           const updateTable = bookings.map((book) =>
             book?._id === id ? { ...book, ...modifyDates } : book
-        );
-        
-        setBookings(updateTable);
-        document.getElementById("modify_date").close();
+          );
+
+          setBookings(updateTable);
+          document.getElementById("modify_date").close();
         }
       })
       .catch((error) => {
@@ -81,7 +96,8 @@ const MyBookings = () => {
 
   const getBookingsData = async () => {
     const { data } = await axiosSecure.get(
-      `/my-bookings?email=${user?.email}`, {withCredentials: true}
+      `/my-bookings?email=${user?.email}`,
+      { withCredentials: true }
     );
     setBookings(data);
   };
@@ -97,6 +113,56 @@ const MyBookings = () => {
       <h2 className="md:text-4xl text-3xl text-center font-bold mb-6">
         My Bookings
       </h2>
+
+       <div className="md:flex hidden justify-center items-center mb-6">
+        <BarChart
+          width={900}
+          height={400}
+          data={data}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="model" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar
+            dataKey="Daily Rental Price"
+            fill="#8884d8"
+            activeBar={<Rectangle fill="pink" stroke="blue" />}
+          />
+        </BarChart>
+      </div>
+
+       <div className="pr-4 md:hidden flex justify-center items-center mb-6">
+        <BarChart
+        width={400}
+          height={200}
+          data={data}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="model" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar
+            dataKey="Daily Rental Price"
+            fill="#8884d8"
+            activeBar={<Rectangle fill="pink" stroke="blue" />}
+          />
+        </BarChart>
+      </div>
 
       {bookings.length === 0 && (
         <div className="flex flex-col justify-center items-center gap-y-3">
@@ -116,8 +182,8 @@ const MyBookings = () => {
         <div className="overflow-x-auto lg:px-12 px-6">
           <table className="table border border-gray-200 border-collapse">
             <thead>
-              <tr className="bg-gray-100 *:text-gray-800 *:font-bold">
-                <th>No.</th>
+              <tr className="bg-gray-200 *:text-gray-800 *:font-bold">
+                <th>Serial No.</th>
                 <th>Car Image</th>
                 <th>Car Model</th>
                 <th>Booking Date</th>
