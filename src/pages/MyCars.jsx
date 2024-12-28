@@ -93,7 +93,6 @@ const MyCars = () => {
       <div className="lg:px-12 px-8 flex justify-between items-center mb-7">
         <h2 className="md:text-4xl text-3xl font-bold">My Cars</h2>
 
-        {cars.length !== 0 && (
           <select
             className="select select-success *:font-bold"
             value={sorted}
@@ -109,11 +108,10 @@ const MyCars = () => {
             <option value="Price: Lowest First">Price: Lowest First</option>
             <option value="Price: Highest First">Price: Highest First</option>
           </select>
-        )}
       </div>
 
       {cars.length === 0 && (
-        <div className="flex flex-col justify-center items-center gap-y-3">
+        <div className="min-h-[calc(100vh-440px)] flex flex-col justify-center items-center gap-y-3">
           <p className="md:text-2xl text-lg text-rose-600 text-center font-bold">
             You did not added any cars, Go to add car page
           </p>

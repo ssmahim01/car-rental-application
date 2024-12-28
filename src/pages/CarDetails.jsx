@@ -32,7 +32,7 @@ const CarDetails = () => {
       Swal.fire({
         position: "center",
         icon: "error",
-        title: "Permission not available to book the car",
+        title: "Permission is not available to book the car",
         showConfirmButton: false,
         timer: 2500,
       });
