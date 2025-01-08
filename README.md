@@ -1,5 +1,5 @@
 <div align="center">
-  <img height="340" src="https://i.ibb.co.com/N2dWNSj/car-rental.png"  />
+  <img width="100%" height="340" src="https://i.ibb.co.com/N2dWNSj/car-rental.png"  />
 </div>
 
 # Project Name
