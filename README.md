@@ -38,14 +38,10 @@ By providing clear information and flexibility, customers are likely to return.<
 
 # Main Technologies
 
-<li>Tailwind CSS: Framework of CSS3</li>
-<li>React: Library of JavaScript</li>
-<li>Firebase: Authentication</li>
-
-# Live URL
-
-<li><b>Live Link: </b>https://car-rental-client.web.app</li>
-
+<li><b>Tailwind CSS: Framework of CSS</b></li>
+<li><b>Daisy UI: Component library of Tailwind CSS</b></li>
+<li><b>React: Library of JavaScript</b></li>
+<li><b>Firebase: Authentication</b></li>
 <hr>
 
 # Key Features
@@ -67,6 +63,19 @@ By providing clear information and flexibility, customers are likely to return.<
 
 <b>Transparent Pricing: </b>
 <li>Display of daily rental prices and calculation of total booking costs based on the rental period.</li>
+
+<hr>
+
+# Installation
+
+When anyone will clone this repository then they have to follow some rules. Otherwise, the application is not working well. So, they have to follow these rules: 
+<li>Open terminal (Git bash or anything) and run this command: <b>npm install</b></li>
+<li>Add <b>.env.local</b> file then add secret keys with values and URLs</li>
+<hr>
+
+# Live URL
+
+<li><b>Live Link: </b>https://car-rental-client.web.app</li>
 
 <hr>
 
