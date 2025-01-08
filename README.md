@@ -112,7 +112,7 @@ By providing clear information and flexibility, customers are likely to return.<
 
   <hr>
 
-# Installation
+# Guideline
 
 When anyone will clone this repository then they have to follow some rules. Otherwise, the application is not working well. So, they have to follow these rules: 
 <li>Open terminal (Git bash or anything) and run this command: <b>npm install</b></li>
@@ -121,8 +121,12 @@ When anyone will clone this repository then they have to follow some rules. Othe
 
 # Live URL
 
-<li><b>Live Link: </b>https://car-rental-client.web.app</li>
+<li><b>Live Link of Project: </b>https://car-rental-client.web.app</li>
+<hr>
 
+# Server Repository
+
+<li><b>Link: </b>https://github.com/ssmahim01/car-rental-platform-server</li>
 <hr>
 
 # Used npm Packages
