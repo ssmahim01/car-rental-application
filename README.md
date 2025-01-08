@@ -1,3 +1,7 @@
+<div align="center">
+  <img height="340" src="https://i.ibb.co.com/N2dWNSj/car-rental.png"  />
+</div>
+
 # Project Name
 
 <b>Car Rental Client</b>
@@ -65,6 +69,48 @@ By providing clear information and flexibility, customers are likely to return.<
 <li>Display of daily rental prices and calculation of total booking costs based on the rental period.</li>
 
 <hr>
+
+# Dependnecies
+
+"dependencies": {
+  <br>
+    "@tanstack/react-query": "^5.62.9",
+    <br>
+    "axios": "^1.7.9",
+      <br>
+    "date-fns": "^4.1.0",
+      <br>
+    "firebase": "^11.1.0",
+      <br>
+    "framer-motion": "^11.15.0",
+      <br>
+    "localforage": "^1.10.0",
+      <br>
+    "match-sorter": "^8.0.0",
+      <br>
+    "motion": "^11.15.0",
+      <br>
+    "react": "^18.3.1",
+      <br>
+    "react-datepicker": "^7.5.0",
+      <br>
+    "react-dom": "^18.3.1",
+      <br>
+    "react-dropzone": "^14.3.5",
+      <br>
+    "react-icons": "^5.4.0",
+      <br>
+    "react-router-dom": "^7.1.0",
+      <br>
+    "recharts": "^2.15.0",
+      <br>
+    "sort-by": "^1.2.0",
+      <br>
+    "sweetalert2": "^11.15.3"
+      <br>
+  },
+
+  <hr>
 
 # Installation
 
