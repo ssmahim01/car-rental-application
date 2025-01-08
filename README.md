@@ -6,6 +6,9 @@
 # Purpose
 
 <b>The purpose of the project is to provide a user-friendly platform that allows customers to book rental cars efficiently while enabling the business to manage its operations seamlessly.</b>
+<hr>
+
+# Features
 
 <b>For Users (Customers):</b>
 <li><b>Convenience:</b> Users can browse and book cars from a catalog of available options based on their needs.</li>
@@ -32,6 +35,12 @@ Checks prevent users from booking the same car twice.</li>
 <li><b>Customer Retention:</b> 
 By providing clear information and flexibility, customers are likely to return.</li>
 <hr>
+
+# Main Technologies
+
+<li>Tailwind CSS: Framework of CSS3</li>
+<li>React: Library of JavaScript</li>
+<li>Firebase: Authentication</li>
 
 # Live URL
 
