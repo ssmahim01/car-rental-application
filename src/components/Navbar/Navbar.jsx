@@ -61,7 +61,7 @@ const Navbar = () => {
             data-tip={`${user?.displayName}`}
           >
             <img
-              className="hidden lg:block w-12 h-12 rounded-full border-4 border-teal-500"
+              className="hidden lg:block w-12 h-12 rounded-full border-4 border-accent shadow-lg"
               src={user?.photoURL}
               alt={user?.displayName}
               referrerPolicy="no-referrer"
@@ -80,8 +80,8 @@ const Navbar = () => {
             src="car-rental-96.png"
             alt="Logo of Car rental"
           />
-          <h2 className="md:text-2xl text-lg text-gray-800 font-bold">
-            Car Rental
+          <h2 className="md:text-2xl text-xl text-gray-800 font-bold">
+            Car House
           </h2>
         </div>
       </div>
@@ -136,7 +136,7 @@ const Navbar = () => {
               {user && (
                 <div className="mb-4">
                   <img
-                  className="block mx-auto lg:hidden mb-2 md:w-20 md:h-20 w-14 h-14 rounded-full border-4 border-teal-500"
+                  className="block mx-auto lg:hidden mb-2 md:w-20 md:h-20 w-14 h-14 rounded-full border-4 border-accent shadow-lg"
                   src={user?.photoURL}
                   referrerPolicy="no-referrer"
                   alt={user?.displayName}

@@ -136,14 +136,14 @@ const AvailableCars = () => {
                     <span className="text-gray-600">${car?.price}/day</span>
                   </p>
 
-                  <p className="text-lg font-bold flex gap-2 items-center">
-                    <IoLocationSharp />{" "}
+                  <p className="text-lg font-bold flex gap-1 items-center">
+                    <IoLocationSharp className="text-lg" />{" "}
                     <span className="text-gray-600">{car?.location}</span>
                   </p>
                 </div>
 
                 <p className="flex gap-2 items-center text-lg text-gray-800 font-bold">
-                  <FaCalendar />
+                  <FaCalendar className="text-lg" />
                   <span className="text-gray-600">
                     Added{" "}
                     {formatDistanceToNow(new Date(car?.dateAdded), {

@@ -11,13 +11,13 @@ const Footer = () => {
           src="car-rental-96.png"
           alt="Logo of Car rental"
         />
-        <h2 className="text-2xl text-gray-900 font-bold">Car Rental</h2>
+        <h2 className="text-2xl text-gray-900 font-bold">Car House</h2>
       </div>
 
       <div className="divider md:py-4 py-2"></div>
 
       <div className="flex flex-wrap md:gap-0 gap-5 md:justify-between justify-center items-center px-4">
-          <p className="font-semibold md:text-left text-center">Copyright © {new Date().getFullYear()} - All right reserved <br /> <span className="font-bold">by Car Rental Ltd.</span></p>
+          <p className="font-semibold md:text-left text-center">Copyright © {new Date().getFullYear()} - All right reserved <br /> <span className="font-bold">by Car House Ltd.</span></p>
 
         <nav className="flex gap-3 items-center">
          <Link to="https://www.facebook.com/ssmahim" target="_blank"><FaFacebook className="text-blue-500 text-2xl" /></Link>

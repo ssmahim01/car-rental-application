@@ -168,7 +168,7 @@ const CarDetails = () => {
 
         <div className="w-full lg:w-1/2">
           <img
-            className="w-full object-cover lg:h-[450px] md:h-[300px] rounded-xl"
+            className="w-full object-cover lg:h-[530px] md:h-[300px] rounded-xl"
             src={image}
             alt={model}
           />
