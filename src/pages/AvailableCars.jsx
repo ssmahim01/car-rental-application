@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { formatDistanceToNow } from "date-fns";
+import { IoLocationSharp } from "react-icons/io5";
+import { FaCalendar } from "react-icons/fa";
 
 const AvailableCars = () => {
   const [cars, setCars] = useState([]);
@@ -10,17 +13,19 @@ const AvailableCars = () => {
   // Fetch available cars
   useEffect(() => {
     fetch(
-      `${import.meta.env.VITE_UNIQUE_URL}/available-cars?sortType=${sorted}&search=${searchTerm}`
+      `${
+        import.meta.env.VITE_UNIQUE_URL
+      }/available-cars?sortType=${sorted}&search=${searchTerm}`
     )
       .then((res) => res.json())
       .then((data) => {
-        const filter = data.filter(singleData => singleData.availability);
+        const filter = data.filter((singleData) => singleData.availability);
         setCars(filter);
-      })
+      });
   }, [sorted, searchTerm]);
- 
+
   return (
-    <div className="mt-8 pb-12">
+    <div className="mt-9 pb-14">
       <div className="flex flex-wrap md:flex-row flex-col md:justify-between justify-center items-center lg:px-12 px-8 mb-5">
         <h2 className="text-3xl font-bold md:mb-0 mb-4">Available Cars</h2>
 
@@ -57,7 +62,9 @@ const AvailableCars = () => {
           onClick={() =>
             setViewType((prev) => (prev === "grid" ? "list" : "grid"))
           }
-          className={`btn px-8 text-white text-lg rounded-full font-bold ${viewType === "grid" ? "bg-gray-500" : "bg-purple-500"}`}
+          className={`btn px-8 text-white text-lg rounded-full font-bold ${
+            viewType === "grid" ? "bg-gray-600" : "bg-indigo-500"
+          }`}
         >
           {viewType === "grid" ? "List View" : "Grid View"}
         </button>
@@ -89,35 +96,72 @@ const AvailableCars = () => {
               <img
                 src={car?.image}
                 alt={car?.model}
-                className={`${
+                className={`relative ${
                   viewType === "grid"
                     ? "w-full h-48 object-cover rounded-lg mb-4"
-                    : "md:mt-0 mt-5 md:w-56 md:h-48 w-full object-cover rounded-lg"
+                    : "md:mt-0 mt-5 lg:w-1/4 md:w-2/5 md:h-56 w-full object-cover rounded-lg"
                 }`}
               />
 
               {/* Car Details */}
-              <div className={`${viewType === "grid" ? "flex-1" : "md:mr-4"}`}>
-                <h3 className="text-2xl font-bold">{car?.model}</h3>
-                <p className="text-gray-600">
-                  <span className="text-lg text-gray-800 font-semibold">Date Added:</span>{" "}
-                  {new Date(car?.dateAdded).toLocaleDateString()}
-                </p>
-                <p className="text-gray-600">
-                  <span className="text-lg text-gray-800 font-semibold">Location:</span>{" "}
-                  {car?.location}
-                </p>
-                <p className="text-gray-600">
-                  <span className="text-lg text-gray-800 font-semibold">Price:</span> ${car?.price}/day
-                </p>
-                <p className="text-gray-600">
-                  <span className="text-lg text-gray-800 font-semibold">Availability:</span>{" "}
-                  {car?.availability ? "Available" : "Unavailable"}
+              <div
+                className={`${
+                  viewType === "grid"
+                    ? "flex-1 space-y-2"
+                    : "lg:w-1/5 md:w-2/6 w-full space-y-2 md:mr-4"
+                }`}
+              >
+                <h2 className="text-2xl text-gray-900 font-bold">
+                  <span className="text-gray-800">{car?.model}</span>
+                </h2>
+
+                <p className="absolute left-6 top-3 text-lg font-bold">
+                  <span
+                    className={`badge text-white ${
+                      car?.availability ? "badge-success" : "badge-error"
+                    }`}
+                  >
+                    {car?.availability ? "Available" : "Not Available"}
+                  </span>
                 </p>
 
+                <div
+                  className={`${
+                    viewType === "grid"
+                      ? "flex justify-between items-center"
+                      : "space-y-1"
+                  }`}
+                >
+                  <p className="text-lg font-bold">
+                    <span className="text-gray-600">${car?.price}/day</span>
+                  </p>
+
+                  <p className="text-lg font-bold flex gap-2 items-center">
+                    <IoLocationSharp />{" "}
+                    <span className="text-gray-600">{car?.location}</span>
+                  </p>
+                </div>
+
+                <p className="flex gap-2 items-center text-lg text-gray-800 font-bold">
+                  <FaCalendar />
+                  <span className="text-gray-600">
+                    Added{" "}
+                    {formatDistanceToNow(new Date(car?.dateAdded), {
+                      addSuffix: true,
+                    })}
+                  </span>
+                </p>
                 {/* Book Now Button */}
                 <Link to={`/car-details/${car?._id}`}>
-                  <button className={`btn btn-info text-white font-bold text-lg ${viewType === "grid" ? "mt-4 px-12 rounded-full" : "mt-2 px-4 rounded-none"}`}>Book Now</button>
+                  <button
+                    className={`btn mt-4 w-full text-white font-bold text-lg border-none ${
+                      viewType === "grid"
+                        ? "btn-neutral rounded-md"
+                        : "bg-indigo-600 rounded"
+                    }`}
+                  >
+                    Book Now
+                  </button>
                 </Link>
               </div>
             </div>

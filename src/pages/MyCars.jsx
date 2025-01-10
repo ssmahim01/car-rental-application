@@ -31,7 +31,7 @@ const MyCars = () => {
   }, [user?.email, sorted]);
 
   const handleUpdateCar = (car) => {
-    console.log(car);
+    // console.log(car);
     setSelectedCar(car);
     document.getElementById("update_modal").showModal();
   };
@@ -90,7 +90,7 @@ const MyCars = () => {
 
   return (
     <div className="pt-8 pb-12 bg-white">
-      <div className="lg:px-12 px-8 flex justify-between items-center mb-7">
+      <div className="lg:px-12 px-8 flex md:flex-row flex-col md:space-y-0 space-y-3 justify-between items-center mb-7">
         <h2 className="md:text-4xl text-3xl font-bold">My Cars</h2>
 
           <select
@@ -125,7 +125,7 @@ const MyCars = () => {
       )}
 
       {cars.length !== 0 && (
-        <div className="overflow-x-auto lg:px-12 px-6">
+        <div className="overflow-x-auto lg:px-12 px-6 min-h-[calc(100vh-440px)]">
           <table className="table">
             <thead>
               <tr className="bg-neutral *:text-white *:font-bold">

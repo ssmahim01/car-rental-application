@@ -1,6 +1,7 @@
 import axios from "axios";
 import { formatDistanceToNow } from "date-fns";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const RecentListings = () => {
   const [recentCars, setRecentCars] = useState([]);
@@ -30,46 +31,41 @@ const RecentListings = () => {
             className="card bg-base-100 rounded-xl shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300"
           >
             <img
-              className="w-full h-52 rounded-t-xl"
+              className="relative w-full h-52 object-cover rounded-t-xl"
               src={car?.image}
               alt={car?.model}
             />
 
+            <p className="absolute right-2 top-1 text-lg font-bold">
+              <span
+                className={`badge text-white ${
+                  car?.availability ? "badge-success" : "badge-error"
+                }`}
+              >
+                {car?.availability ? "Available" : "Not Available"}
+              </span>
+            </p>
+
             <div className="p-4 space-y-2">
-              <h2 className="text-2xl text-gray-900 font-bold">
-                Model: <span className="text-gray-700">{car?.model}</span>
+              <h2 className="text-2xl font-bold">
+                <span className="text-gray-800">{car?.model}</span>
               </h2>
 
-              <p className="text-lg text-gray-800 font-bold">
-                Daily Price:{" "}
-                <span className="text-gray-600">${car?.price}/day</span>
+              <p className="text-gray-600 font-medium">
+                {car?.description.slice(0, 80)}...
               </p>
 
-              <p className="text-gray-800 text-lg font-bold">
-                Availability:{" "}
-                <span
-                  className={`badge text-white ${
-                    car?.availability ? "badge-success" : "badge-error"
-                  }`}
-                >
-                  {car?.availability ? "Available" : "Not Available"}
-                </span>
-              </p>
+              <div className="pt-2 flex justify-between items-center">
+                <p className="text-lg font-bold">
+                  <span className="text-gray-600">${car?.price}/day</span>
+                </p>
 
-              <p className="text-lg text-gray-800 font-bold">
-                Booking_count:{" "}
-                <span className="text-gray-600">{car?.bookingCount}</span>
-              </p>
-
-              <p className="text-lg text-gray-800 font-bold">
-                Date Posted:{" "}
-                <span className="text-gray-600">
-                  Added{" "}
-                  {formatDistanceToNow(new Date(car?.dateAdded), {
-                    addSuffix: true,
-                  })}
-                </span>
-              </p>
+                <Link to={`/car-details/${car._id}`}>
+                  <button className="btn bg-indigo-500 text-white border-none rounded-md px-8 text-lg font-bold">
+                    See More
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         ))}

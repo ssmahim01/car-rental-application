@@ -29,10 +29,10 @@ const MyBookings = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
-  const data = bookings.map(book => ({
+  const data = bookings.map((book) => ({
     model: book?.model,
-    'Daily Rental Price': book?.price
-  }))
+    "Daily Rental Price": book?.price,
+  }));
   const handleTotalPrice = (booking) => {
     const bookingPeriod = differenceInDays(
       new Date(booking?.bookingEndDate),
@@ -116,96 +116,110 @@ const MyBookings = () => {
         My Bookings
       </h2>
 
-       <div className="lg:flex hidden justify-between items-center mb-6 mr-6">
-        <BarChart
-          width={700}
-          height={400}
-          data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="model" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar
-            dataKey="Daily Rental Price"
-            fill="#8884d8"
-            activeBar={<Rectangle fill="pink" stroke="blue" />}
-          />
-        </BarChart>
+      {bookings.length !== 0 && (
+        <>
+          <div className="lg:flex hidden justify-between items-center mb-6 mr-6">
+            <BarChart
+              width={700}
+              height={400}
+              data={data}
+              margin={{
+                top: 10,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="model" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar
+                dataKey="Daily Rental Price"
+                fill="#8884d8"
+                activeBar={<Rectangle fill="pink" stroke="blue" />}
+              />
+            </BarChart>
 
-      <LineChart
-          width={700}
-          height={400}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-          >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="model" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="Daily Rental Price" stroke="#8884d8" activeDot={{ r: 8 }} />
-        </LineChart>
+            <LineChart
+              width={700}
+              height={400}
+              data={data}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="model" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Line
+                type="monotone"
+                dataKey="Daily Rental Price"
+                stroke="#8884d8"
+                activeDot={{ r: 8 }}
+              />
+            </LineChart>
           </div>
 
-       <div className="pr-4 lg:hidden flex md:flex-row flex-col justify-center items-center gap-6 mb-6">
-        <BarChart
-        width={400}
-          height={200}
-          data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="model" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar
-            dataKey="Daily Rental Price"
-            fill="#8884d8"
-            activeBar={<Rectangle fill="pink" stroke="blue" />}
-          />
-        </BarChart>
+          <div className="pr-4 lg:hidden flex md:flex-row flex-col justify-center items-center gap-6 mb-6">
+            <BarChart
+              width={400}
+              height={200}
+              data={data}
+              margin={{
+                top: 10,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="model" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar
+                dataKey="Daily Rental Price"
+                fill="#8884d8"
+                activeBar={<Rectangle fill="pink" stroke="blue" />}
+              />
+            </BarChart>
 
-        <LineChart
-          width={400}
-          height={200}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-          >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="model" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="Daily Rental Price" stroke="#8884d8" activeDot={{ r: 8 }} />
-        </LineChart>
-      </div>
+            <LineChart
+              width={400}
+              height={200}
+              data={data}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="model" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Line
+                type="monotone"
+                dataKey="Daily Rental Price"
+                stroke="#8884d8"
+                activeDot={{ r: 8 }}
+              />
+            </LineChart>
+          </div>
+        </>
+      )}
 
       {bookings.length === 0 && (
-        <div className="flex flex-col justify-center items-center gap-y-3">
+        <div className="bg-white min-h-[calc(100vh-430px)] flex flex-col justify-center items-center gap-y-3">
           <p className="md:text-2xl text-xl text-rose-600 font-bold">
             You did not booked any cars
           </p>

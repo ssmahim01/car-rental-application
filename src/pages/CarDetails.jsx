@@ -113,7 +113,7 @@ const CarDetails = () => {
   };
 
   return (
-    <div className="mt-6 pb-12 md:w-4/5 w-11/12 mx-auto">
+    <div className="pt-10 pb-12 md:w-4/5 w-11/12 mx-auto">
       <h2 className="md:text-3xl text-2xl text-center font-extrabold text-gray-800 mb-4">
         Car Details: {model}
       </h2>
@@ -149,6 +149,7 @@ const CarDetails = () => {
           {user ? (
             <button
               onClick={handleBook}
+              disabled={!availability} 
               className="mt-4 btn bg-primary hover:bg-fuchsia-500 rounded-full text-white text-lg font-bold px-8"
             >
               Book Now
@@ -167,12 +168,14 @@ const CarDetails = () => {
 
         <div className="w-full lg:w-1/2">
           <img
-            className="w-full lg:h-[450px] md:h-[300px] rounded-xl"
+            className="w-full object-cover lg:h-[450px] md:h-[300px] rounded-xl"
             src={image}
             alt={model}
           />
         </div>
       </div>
+
+      <Link to="/"><button className="btn btn-outline border-2 border-purple-500 text-lg text-purple-600 md:text-left text-center font-bold rounded-full mt-8 px-8">Back to Home</button></Link>
 
         <dialog id="booking_modal" className="modal modal-middle">
           <div className="w-full flex justify-center items-center">

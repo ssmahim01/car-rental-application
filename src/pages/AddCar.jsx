@@ -53,6 +53,7 @@ const AddCar = () => {
         .then((data) => {
           // console.log(data)
           if(data.insertedId){
+            e.target.reset();
             Swal.fire({
               position: "center",
               icon: "success",

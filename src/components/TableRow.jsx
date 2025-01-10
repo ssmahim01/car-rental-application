@@ -1,6 +1,4 @@
-import { format } from "date-fns";
-
-const TableRow = ({car, index, handleUpdateCar, handleDelete }) => {
+const TableRow = ({ car, index, handleUpdateCar, handleDelete }) => {
   return (
     <tr className="hover *:text-gray-700 *:font-semibold">
       <th>{index + 1}</th>
@@ -14,7 +12,9 @@ const TableRow = ({car, index, handleUpdateCar, handleDelete }) => {
       <td>{car?.model}</td>
       <td>${car?.price}</td>
       <td>{car?.bookingCount}</td>
-      <td>{car?.availability ? "Available" : "Unavailable"}</td>
+      <td><span className={`badge text-white p-3 mb-1 ${
+          car?.availability ? "badge-success" : "badge-error"
+        }`}>{car?.availability ? "Available" : "Not Available"}</span></td>
       <td>{new Date(car?.dateAdded).toLocaleDateString()}</td>
       <td className="flex gap-2 items-center">
         <button
