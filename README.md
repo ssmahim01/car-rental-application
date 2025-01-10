@@ -1,6 +1,6 @@
 # Project Name
 
-<b>Car Rental Client</b>
+<b>Car House (Car Rental Platform)</b>
 <hr>
 
 # Purpose
