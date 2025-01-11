@@ -1,3 +1,7 @@
+<div align="center">
+  <img width="100%" height="340" src="https://i.ibb.co.com/sgtkZBp/car-house.png"  />
+</div>
+
 # Project Name
 
 <b>Car House (Car Rental Platform)</b>
