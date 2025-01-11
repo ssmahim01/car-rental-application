@@ -126,7 +126,7 @@ When anyone will clone this repository then they have to follow some rules. Othe
 
 # Server Repository
 
-<li> - [Car Rental Application Server](https://github.com/ssmahim01/car-rental-application-server)</li>
+- [Car Rental Application Server](https://github.com/ssmahim01/car-rental-application-server)
 <hr>
 
 # Used npm Packages
