@@ -4,7 +4,7 @@
 
 # Project Name
 
-<b>Car House (Car Rental Platform)</b>
+<b>Car House (Car Rental Application)</b>
 <hr>
 
 # Purpose
