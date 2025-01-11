@@ -72,7 +72,7 @@ const Navbar = () => {
     </div>
   );
   return (
-    <div className="navbar justify-between bg-base-100 shadow-md fixed z-10 lg:px-14 px-6">
+    <div className="navbar justify-between bg-purple-100 shadow-md fixed z-10 lg:px-14 px-6">
       <div className="navbar-start">
         <div className="flex gap-2 items-center">
           <img

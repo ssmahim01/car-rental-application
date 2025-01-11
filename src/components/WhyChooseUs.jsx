@@ -9,7 +9,7 @@ const WhyChooseUs = () => {
   return (
     <div className="my-12 px-4 md:px-12">
       <div className="text-center mb-8 space-y-2">
-        <h2 className="text-3xl font-bold">Why Choose Us?</h2>
+        <h2 className="text-3xl font-extrabold">Why Choose Us?</h2>
         <p className="text-gray-600 font-medium">
           Experience the best car rental service tailored for you.
         </p>

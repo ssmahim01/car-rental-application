@@ -6,6 +6,8 @@ import useAuth from "../hooks/useAuth";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FiLogIn } from "react-icons/fi";
+import { FaBookmark } from "react-icons/fa6";
+import { FaCalendarAlt } from "react-icons/fa";
 
 const CarDetails = () => {
   //   const { id } = useParams();
@@ -17,6 +19,7 @@ const CarDetails = () => {
   const {
     _id,
     model,
+    registrationNumber,
     price,
     availability,
     features,
@@ -117,42 +120,50 @@ const CarDetails = () => {
       <h2 className="md:text-3xl text-2xl text-center font-extrabold text-gray-800 mb-4">
         Car Details: {model}
       </h2>
-      <div className="flex flex-col-reverse lg:flex-row justify-between items-center border border-gray-200 gap-8 bg-base-100 rounded-xl p-5 shadow-md">
+      <div className="flex flex-col-reverse lg:flex-row-reverse justify-between items-center border border-gray-200 gap-8 bg-base-100 rounded-xl p-5 shadow-md">
         <div className="w-full lg:w-1/2 space-y-3">
-          <h2 className="md:text-2xl text-xl text-gray-900 font-bold">
+          <h2 className="md:text-2xl text-xl text-gray-900 font-extrabold">
             Model: <span className="text-gray-700">{model}</span>
           </h2>
 
-          <p className="text-gray-800 md:text-xl text-lg font-semibold">
-            Price Per Day: <span className="text-gray-600">${price}/day</span>
+          <div className="flex justify-between items-center">
+            <p className="md:text-xl text-lg font-bold">
+              <span className="text-gray-600">${price}/day</span>
+            </p>
+
+            <p className="md:text-xl text-lg font-bold">
+              <span
+                className={`badge text-white ${
+                  availability ? "badge-success" : "badge-error"
+                }`}
+              >
+                {availability ? "Available" : "Not Available"}
+              </span>
+            </p>
+          </div>
+
+          <p className="text-gray-800 md:text-xl text-lg font-bold">
+            Registration:{" "}
+            <span className="text-gray-600">{registrationNumber}</span>
           </p>
 
-          <p className="text-gray-800 md:text-xl text-lg font-semibold">
-            Availability:{" "}
-            <span
-              className={`badge text-white ${
-                availability ? "badge-success" : "badge-error"
-              }`}
-            >
-              {availability ? "Available" : "Not Available"}
-            </span>
+          <p className="text-gray-800 font-bold">
+            Features:{" "}
+            <span className="text-gray-600 font-medium">{features}</span>
           </p>
 
-          <p className="text-gray-800 font-medium">
-            Features: <span className="text-gray-600">{features}</span>
-          </p>
-
-          <p className="text-gray-800 font-medium">
-            Description: <span className="text-gray-500">{description}</span>
+          <p className="text-gray-800 font-bold">
+            Description:{" "}
+            <span className="text-gray-500 font-medium">{description}</span>
           </p>
 
           {user ? (
             <button
               onClick={handleBook}
-              disabled={!availability} 
-              className="mt-4 btn bg-primary hover:bg-fuchsia-500 rounded-full text-white text-lg font-bold px-8"
+              disabled={!availability}
+              className="flex gap-2 items-center mt-4 btn bg-primary hover:bg-fuchsia-500 rounded-full text-white text-lg font-bold px-8"
             >
-              Book Now
+              <FaBookmark className="text-lg text-white/90" /> Book Now
             </button>
           ) : (
             <Link to="/log-in">
@@ -168,105 +179,107 @@ const CarDetails = () => {
 
         <div className="w-full lg:w-1/2">
           <img
-            className="w-full object-cover lg:h-[530px] md:h-[300px] rounded-xl"
+            className="w-full object-cover lg:h-[500px] md:h-[300px] rounded-xl"
             src={image}
             alt={model}
           />
         </div>
       </div>
 
-      <Link to="/"><button className="btn btn-outline border-2 border-purple-500 text-lg text-purple-600 md:text-left text-center font-bold rounded-full mt-8 px-8">Back to Home</button></Link>
+      <Link to="/">
+        <button className="btn btn-outline border-2 border-purple-500 text-lg text-purple-600 md:text-left text-center font-bold rounded-full mt-8 px-8">
+          Back to Home
+        </button>
+      </Link>
 
-        <dialog id="booking_modal" className="modal modal-middle">
-          <div className="w-full flex justify-center items-center">
-            <div className="modal-box">
-              <h2 className="text-3xl font-bold text-center">Book Now</h2>
-              <div className="divider w-4/5 mx-auto"></div>
+      <dialog id="booking_modal" className="modal modal-middle">
+        <div className="w-full flex justify-center items-center">
+          <div className="modal-box">
+            <h2 className="text-3xl font-bold text-center">Book Now</h2>
+            <div className="divider w-4/5 mx-auto"></div>
 
-              <figure className="w-full md:h-60 py-4">
-                <img
-                  className="w-full h-full rounded-lg"
-                  src={image}
-                  alt={model}
-                />
-              </figure>
+            <figure className="w-full md:h-60 py-4">
+              <img
+                className="w-full h-full rounded-lg"
+                src={image}
+                alt={model}
+              />
+            </figure>
 
-              <div className="w-full space-y-3">
-                <h2 className="md:text-2xl text-xl text-gray-900 font-bold">
-                  Model: <span className="text-gray-700">{model}</span>
-                </h2>
+            <div className="w-full space-y-3">
+              <h2 className="md:text-2xl text-xl text-gray-900 font-bold">
+                Model: <span className="text-gray-700">{model}</span>
+              </h2>
 
-                <p className="text-gray-800 md:text-xl text-lg font-semibold">
-                  Price Per Day:{" "}
-                  <span className="text-gray-600">${price}/day</span>
-                </p>
+              <p className="text-gray-800 md:text-xl text-lg font-semibold">
+                Price Per Day:{" "}
+                <span className="text-gray-600">${price}/day</span>
+              </p>
 
-                <p className="text-gray-800 md:text-xl text-lg font-semibold">
-                  Availability:{" "}
-                  <span
-                    className={`badge text-white ${
-                      availability ? "badge-success" : "badge-error"
-                    }`}
-                  >
-                    {availability ? "Available" : "Not Available"}
+              <p className="text-gray-800 md:text-xl text-lg font-semibold">
+                Availability:{" "}
+                <span
+                  className={`badge text-white ${
+                    availability ? "badge-success" : "badge-error"
+                  }`}
+                >
+                  {availability ? "Available" : "Not Available"}
+                </span>
+              </p>
+
+              <p className="text-gray-800 font-medium">
+                Features: <span className="text-gray-600">{features}</span>
+              </p>
+
+              <p className="text-gray-800 font-medium">
+                Description:{" "}
+                <span className="text-gray-500">{description}</span>
+              </p>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text font-bold">
+                    Booking Start Date
                   </span>
-                </p>
+                </label>
+                <DatePicker
+                  className="input input-bordered w-full"
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                />
+              </div>
 
-                <p className="text-gray-800 font-medium">
-                  Features: <span className="text-gray-600">{features}</span>
-                </p>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text font-bold">Booking End Date</span>
+                </label>
+                <DatePicker
+                  className="input input-bordered w-full"
+                  selected={endDate}
+                  onChange={(date) => setEndDate(date)}
+                />
+              </div>
 
-                <p className="text-gray-800 font-medium">
-                  Description:{" "}
-                  <span className="text-gray-500">{description}</span>
-                </p>
+              <div className="py-3 flex gap-4 justify-center items-center">
+                <button
+                  onClick={handleBookNow}
+                  className="flex gap-2 items-center md:px-14 px-10 btn bg-violet-500 hover:bg-fuchsia-500 rounded-full text-white text-lg font-bold"
+                  disabled={!availability}
+                >
+                 <FaCalendarAlt className="text-lg text-white/90" /> Book Car
+                </button>
 
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text font-bold">
-                      Booking Start Date
-                    </span>
-                  </label>
-                  <DatePicker
-                    className="input input-bordered w-full"
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                  />
-                </div>
-
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text font-bold">
-                      Booking End Date
-                    </span>
-                  </label>
-                  <DatePicker
-                    className="input input-bordered w-full"
-                    selected={endDate}
-                    onChange={(date) => setEndDate(date)}
-                  />
-                </div>
-
-                <div className="py-3 flex gap-4 justify-center items-center">
-                  <button
-                    onClick={handleBookNow}
-                    className="md:px-14 px-10 btn bg-violet-500 hover:bg-fuchsia-500 rounded-full text-white text-lg font-bold"
-                    disabled={!availability}
-                  >
-                    Book Car
-                  </button>
-
-                  <button
-                    onClick={handleClose}
-                    className="md:px-14 px-10 btn btn-error text-lg text-white font-bold rounded-full"
-                  >
-                    Cancel
-                  </button>
-                </div>
+                <button
+                  onClick={handleClose}
+                  className="md:px-14 px-10 btn btn-error text-lg text-white font-bold rounded-full"
+                >
+                  Cancel
+                </button>
               </div>
             </div>
           </div>
-        </dialog>
+        </div>
+      </dialog>
     </div>
   );
 };

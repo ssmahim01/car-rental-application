@@ -1,6 +1,7 @@
 import axios from "axios";
 import { formatDistanceToNow } from "date-fns";
 import { useEffect, useState } from "react";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const RecentListings = () => {
@@ -61,8 +62,8 @@ const RecentListings = () => {
                 </p>
 
                 <Link to={`/car-details/${car._id}`}>
-                  <button className="btn bg-indigo-500 text-white border-none rounded-md px-8 text-lg font-bold">
-                    See More
+                  <button className="flex gap-2 items-center btn bg-indigo-500 text-white border-none rounded-md px-8 text-lg font-bold">
+                    See More <FaArrowUpRightFromSquare className="text-lg" />
                   </button>
                 </Link>
               </div>

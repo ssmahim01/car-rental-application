@@ -112,13 +112,60 @@ const MyBookings = () => {
 
   return (
     <div className="pt-8 pb-12 bg-white">
-      <h2 className="md:text-4xl text-3xl text-center font-bold mb-6">
-        My Bookings
-      </h2>
+      {bookings.length !== 0 && (
+        <h2 className="md:text-4xl text-3xl text-center font-bold pt-2 mb-6">
+          My Bookings
+        </h2>
+      )}
+
+      {bookings.length === 0 && (
+        <div className="bg-white min-h-[calc(100vh-360px)] flex flex-col justify-center items-center gap-y-3">
+          <p className="md:text-2xl text-xl text-rose-600 font-bold">
+            You did not booked any cars
+          </p>
+
+          <Link to="/available-cars">
+            <button className="btn btn-neutral text-white font-bold hover:bg-emerald-500 hover:text-white rounded-full text-lg px-8 border-none">
+              Book Car
+            </button>
+          </Link>
+        </div>
+      )}
+
+      {bookings.length !== 0 && (
+        <div className="overflow-x-auto lg:px-12 w-full">
+          <table className="table border border-gray-200 border-collapse">
+            <thead>
+              <tr className="bg-gray-100 *:text-gray-800 *:font-bold">
+                <th className="p-4">Serial No.</th>
+                <th className="p-4">Car Image</th>
+                <th className="p-4">Car Model</th>
+                <th className="p-4">Booking Date</th>
+                <th className="p-4">Total Price</th>
+                <th className="p-4">Booking Status</th>
+                <th className="p-4">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {bookings.map((booking, index) => (
+                <BookingsTableRow
+                  key={booking?._id}
+                  bookings={bookings}
+                  setBookings={setBookings}
+                  booking={booking}
+                  index={index}
+                  handleTotalPrice={handleTotalPrice}
+                  handleModalOpen={handleModalOpen}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
 
       {bookings.length !== 0 && (
         <>
-          <div className="lg:flex hidden justify-between items-center mb-6 mr-6">
+          <div className="lg:flex hidden justify-between items-center mt-10 mr-6">
             <BarChart
               width={700}
               height={400}
@@ -167,7 +214,7 @@ const MyBookings = () => {
             </LineChart>
           </div>
 
-          <div className="pr-4 lg:hidden flex md:flex-row flex-col justify-center items-center gap-6 mb-6">
+          <div className="pr-4 lg:hidden flex md:flex-row flex-col justify-center items-center gap-6 mt-10">
             <BarChart
               width={400}
               height={200}
@@ -216,51 +263,6 @@ const MyBookings = () => {
             </LineChart>
           </div>
         </>
-      )}
-
-      {bookings.length === 0 && (
-        <div className="bg-white min-h-[calc(100vh-430px)] flex flex-col justify-center items-center gap-y-3">
-          <p className="md:text-2xl text-xl text-rose-600 font-bold">
-            You did not booked any cars
-          </p>
-
-          <Link to="/available-cars">
-            <button className="btn btn-neutral text-white font-bold hover:bg-emerald-500 hover:text-white rounded-full text-lg px-8 border-none">
-              Book Car
-            </button>
-          </Link>
-        </div>
-      )}
-
-      {bookings.length !== 0 && (
-        <div className="overflow-x-auto lg:px-12 px-6">
-          <table className="table border border-gray-200 border-collapse">
-            <thead>
-              <tr className="bg-gray-100 *:text-gray-800 *:font-bold">
-                <th className="p-4">Serial No.</th>
-                <th className="p-4">Car Image</th>
-                <th className="p-4">Car Model</th>
-                <th className="p-4">Booking Date</th>
-                <th className="p-4">Total Price</th>
-                <th className="p-4">Booking Status</th>
-                <th className="p-4">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {bookings.map((booking, index) => (
-                <BookingsTableRow
-                  key={booking?._id}
-                  bookings={bookings}
-                  setBookings={setBookings}
-                  booking={booking}
-                  index={index}
-                  handleTotalPrice={handleTotalPrice}
-                  handleModalOpen={handleModalOpen}
-                />
-              ))}
-            </tbody>
-          </table>
-        </div>
       )}
 
       <dialog id="modify_date" className="modal modal-middle">

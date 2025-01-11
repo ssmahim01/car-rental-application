@@ -125,7 +125,7 @@ const MyCars = () => {
       )}
 
       {cars.length !== 0 && (
-        <div className="overflow-x-auto lg:px-12 px-6 min-h-[calc(100vh-440px)]">
+        <div className="overflow-x-auto lg:px-12 w-full min-h-[calc(100vh-440px)]">
           <table className="table">
             <thead>
               <tr className="bg-neutral *:text-white *:font-bold">

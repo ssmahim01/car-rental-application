@@ -53,8 +53,6 @@ const AvailableCars = () => {
           <option value="Date Added: Oldest First">
             Date Added: Oldest First
           </option>
-          <option value="Price: Lowest First">Price: Lowest First</option>
-          <option value="Price: Highest First">Price: Highest First</option>
         </select>
 
         {/* Toggle View Button */}
@@ -115,15 +113,31 @@ const AvailableCars = () => {
                   <span className="text-gray-800">{car?.model}</span>
                 </h2>
 
-                <p className="absolute left-6 top-3 text-lg font-bold">
-                  <span
-                    className={`badge text-white ${
-                      car?.availability ? "badge-success" : "badge-error"
+                <div
+                  className={`${
+                    viewType === "grid"
+                      ? "hidden"
+                      : "flex justify-between items-center"
+                  }`}
+                >
+                  <p className="text-lg font-bold">
+                    <span className="text-gray-600">${car?.price}/day</span>
+                  </p>
+
+                  <p
+                    className={`text-lg font-bold ${
+                      viewType === "grid" ? "absolute top-3 left-6" : ""
                     }`}
                   >
-                    {car?.availability ? "Available" : "Not Available"}
-                  </span>
-                </p>
+                    <span
+                      className={`badge text-white ${
+                        car?.availability ? "badge-success" : "badge-error"
+                      }`}
+                    >
+                      {car?.availability ? "Available" : "Not Available"}
+                    </span>
+                  </p>
+                </div>
 
                 <div
                   className={`${
@@ -132,7 +146,7 @@ const AvailableCars = () => {
                       : "space-y-1"
                   }`}
                 >
-                  <p className="text-lg font-bold">
+                  <p className={`text-lg font-bold ${viewType === "grid" ? "block" : "hidden"}`}>
                     <span className="text-gray-600">${car?.price}/day</span>
                   </p>
 
