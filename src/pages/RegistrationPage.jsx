@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 import SharedLogin from "../components/SharedLogin";
+import { IoIosCreate } from "react-icons/io";
 
 const RegistrationPage = () => {
   const { registerUser, updateUserProfile, loginWithGoogle, logOutUser } = useAuth();
@@ -158,8 +159,8 @@ const RegistrationPage = () => {
           </div>
 
           <div className="form-control mt-6">
-            <button className="btn bg-purple-600 text-lg text-white/90 hover:btn-primary hover:text-white font-bold">
-              Register
+            <button className="flex gap-2 items-center btn bg-purple-600 text-lg text-white/90 hover:text-white font-bold">
+              Register <IoIosCreate className="text-2xl" />
             </button>
           </div>
         </form>

@@ -3,6 +3,7 @@ import SharedLogin from "../components/SharedLogin";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
+import { RiLoginBoxLine } from "react-icons/ri";
 
 const LoginPage = () => {
   const { loginWithEmailPass, loginWithGoogle } = useAuth();
@@ -109,8 +110,8 @@ const LoginPage = () => {
           </div>
 
           <div className="form-control mt-6">
-            <button className="btn btn-info text-lg text-white/90 hover:btn-success hover:text-white font-bold">
-              Log In
+            <button className="flex gap-2 items-center btn bg-cyan-600 border-none text-lg text-white/90 hover:btn-accent hover:text-white font-bold">
+              Log In <RiLoginBoxLine className="text-xl" />
             </button>
           </div>
         </form>
