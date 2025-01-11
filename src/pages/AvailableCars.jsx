@@ -94,13 +94,22 @@ const AvailableCars = () => {
               <img
                 src={car?.image}
                 alt={car?.model}
-                className={`relative ${
+                className={`${
                   viewType === "grid"
-                    ? "w-full h-48 object-cover rounded-lg mb-4"
+                    ? "w-full relative h-48 object-cover rounded-lg mb-4"
                     : "md:mt-0 mt-5 lg:w-1/4 md:w-2/5 md:h-56 w-full object-cover rounded-lg"
                 }`}
               />
 
+              <p className={`text-lg font-bold ${viewType === "grid" ? "block absolute top-5 left-6" : "hidden"}`}>
+                <span
+                  className={`badge text-white ${
+                    car?.availability ? "badge-success" : "badge-error"
+                  }`}
+                >
+                  {car?.availability ? "Available" : "Not Available"}
+                </span>
+              </p>
               {/* Car Details */}
               <div
                 className={`${
@@ -124,11 +133,7 @@ const AvailableCars = () => {
                     <span className="text-gray-600">${car?.price}/day</span>
                   </p>
 
-                  <p
-                    className={`text-lg font-bold ${
-                      viewType === "grid" ? "absolute top-3 left-6" : ""
-                    }`}
-                  >
+                  <p className="text-lg font-bold">
                     <span
                       className={`badge text-white ${
                         car?.availability ? "badge-success" : "badge-error"
@@ -146,7 +151,11 @@ const AvailableCars = () => {
                       : "space-y-1"
                   }`}
                 >
-                  <p className={`text-lg font-bold ${viewType === "grid" ? "block" : "hidden"}`}>
+                  <p
+                    className={`text-lg font-bold ${
+                      viewType === "grid" ? "block" : "hidden"
+                    }`}
+                  >
                     <span className="text-gray-600">${car?.price}/day</span>
                   </p>
 
