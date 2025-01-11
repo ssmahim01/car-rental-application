@@ -10,6 +10,9 @@
 # Purpose
 
 <b>The purpose of the project is to provide a user-friendly platform that allows customers to book rental cars efficiently while enabling the business to manage its operations seamlessly.</b>
+<hr>
+
+# Main Features
 
 <b>For Users (Customers):</b>
 <li><b>Convenience:</b> Users can browse and book cars from a catalog of available options based on their needs.</li>
@@ -37,10 +40,12 @@ Checks prevent users from booking the same car twice.</li>
 By providing clear information and flexibility, customers are likely to return.</li>
 <hr>
 
-# Live URL
+# Main Technologies
 
-<li><b>Live Link: </b>https://car-rental-client.web.app</li>
-
+<li><b>Tailwind CSS: Framework of CSS</b></li>
+<li><b>Daisy UI: Component library of Tailwind CSS</b></li>
+<li><b>React: Library of JavaScript</b></li>
+<li><b>Firebase: Authentication</b></li>
 <hr>
 
 # Key Features
@@ -63,6 +68,65 @@ By providing clear information and flexibility, customers are likely to return.<
 <b>Transparent Pricing: </b>
 <li>Display of daily rental prices and calculation of total booking costs based on the rental period.</li>
 
+<hr>
+
+# Dependnecies
+
+"dependencies": {
+  <br>
+    "@tanstack/react-query": "^5.62.9",
+    <br>
+    "axios": "^1.7.9",
+      <br>
+    "date-fns": "^4.1.0",
+      <br>
+    "firebase": "^11.1.0",
+      <br>
+    "framer-motion": "^11.15.0",
+      <br>
+    "localforage": "^1.10.0",
+      <br>
+    "match-sorter": "^8.0.0",
+      <br>
+    "motion": "^11.15.0",
+      <br>
+    "react": "^18.3.1",
+      <br>
+    "react-datepicker": "^7.5.0",
+      <br>
+    "react-dom": "^18.3.1",
+      <br>
+    "react-dropzone": "^14.3.5",
+      <br>
+    "react-icons": "^5.4.0",
+      <br>
+    "react-router-dom": "^7.1.0",
+      <br>
+    "recharts": "^2.15.0",
+      <br>
+    "sort-by": "^1.2.0",
+      <br>
+    "sweetalert2": "^11.15.3"
+      <br>
+  },
+
+  <hr>
+
+# Guideline
+
+When anyone will clone this repository then they have to follow some rules. Otherwise, the application is not working well. So, they have to follow these rules: 
+<li>Open terminal (Git bash or anything) and run this command: <b>npm install</b></li>
+<li>Add <b>.env.local</b> file then add secret keys with values and URLs</li>
+<hr>
+
+# Live URL
+
+<li><b>Live Link of Project: </b>https://car-rental-client.web.app</li>
+<hr>
+
+# Server Repository
+
+<li><b>Link: </b>https://github.com/ssmahim01/car-rental-platform-server</li>
 <hr>
 
 # Used npm Packages
