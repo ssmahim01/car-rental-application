@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="100%" height="340" src="car-house.png"  />
+  <img width="100%" height="340" src="/public/car-house.png"  />
 </div>
 
 ---
