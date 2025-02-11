@@ -167,7 +167,7 @@ const RegistrationPage = () => {
 
         <p className="text-center font-semibold pb-6">
           Already Have An Existing Account?{" "}
-          <Link to="/log-in" className="text-cyan-600 font-bold underline">
+          <Link to="/log-in" className="text-indigo-600 font-bold underline">
             Login Here
           </Link>
         </p>

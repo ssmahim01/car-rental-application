@@ -15,7 +15,7 @@ const FindBestCars = () => {
                     alt="Image of Luxurious Car"
                     animate={{y: [30, 50, 30]}}
                     transition={{duration: 6, repeat: Infinity}}
-                    className="lg:w-[450px] md:w-96 h-60 object-cover border-t-8 border-r-8 border-secondary rounded-tr-xl"
+                    className="lg:w-[450px] md:w-96 h-60 object-cover border-t-8 border-r-8 border-emerald-400 rounded-tr-xl"
                     />
 
                     <motion.img 
@@ -23,7 +23,7 @@ const FindBestCars = () => {
                     alt="Image of Luxurious Car"
                     animate={{x: [40, 80, 40]}}
                     transition={{duration: 6, repeat: Infinity}}
-                    className="lg:w-[450px] md:w-96 h-60 object-cover border-b-8 border-l-8 border-emerald-500 rounded-bl-xl"
+                    className="lg:w-[450px] md:w-96 h-60 object-cover border-b-8 border-l-8 border-purple-500 rounded-bl-xl"
                     />
                 </div>
 
@@ -31,13 +31,13 @@ const FindBestCars = () => {
                     <img 
                     src={bestCar1}
                     alt="Image of Luxurious Car"
-                    className="w-full object-cover border-t-8 border-r-8 border-secondary rounded-tr-xl"
+                    className="w-full object-cover border-t-8 border-r-8 border-emerald-400 rounded-tr-xl"
                     />
 
                     <img 
                     src={bestCar2}
                     alt="Image of Luxurious Car"
-                    className="w-full object-cover border-b-8 border-l-8 border-emerald-500 rounded-bl-xl"
+                    className="w-full object-cover border-b-8 border-l-8 border-purple-500 rounded-bl-xl"
                     />
                 </div>
 
@@ -46,7 +46,7 @@ const FindBestCars = () => {
 
                     <p className="lg:w-3/4 text-gray-600 font-medium md:text-left text-center">The car rented platform is provide cars for rent. Customers want to explore this platform then they would like to book any cars. Also owner may provide a lower price car which is quality full. Non-logged users cannot show car details and book any cars.</p>
 
-                   <Link to="/my-bookings"><button className="block md:mx-0 mx-auto md:mt-8 mt-5 btn bg-neutral text-white text-lg px-6 font-bold rounded-none">Check Bookings</button></Link>
+                   <Link to="/my-bookings"><button className="block md:mx-0 mx-auto md:mt-8 mt-5 btn bg-neutral text-white text-lg px-6 font-bold rounded-md">Check Bookings</button></Link>
                 </div>
             </div>
         </div>

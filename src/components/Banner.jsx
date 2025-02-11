@@ -17,7 +17,7 @@ const Banner = () => {
           <h1 className="mb-5 md:text-4xl text-3xl font-bold">Drive Your Dreams Today!</h1>
 
           {/* Call-to-Action Button */}
-          <Link to="/available-cars"><button className="btn bg-teal-500 border-none text-white text-lg px-6 font-bold transition-all hover:text-white rounded-full shadow-lg">View Available Cars</button></Link>
+          <Link to="/available-cars"><button className="btn bg-indigo-500 border-none text-white text-lg px-6 font-bold transition-all hover:text-white rounded-full shadow-lg">View Available Cars</button></Link>
         </div>
       </div>
     </div>

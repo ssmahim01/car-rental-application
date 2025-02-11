@@ -24,25 +24,21 @@ const SpecialOffers = () => {
             className={`${
               offer?.title === "Get 15% off for weekend rentals!" &&
               "bg-emerald-500"
-            } ${offer?.title === "Luxury Cars at $99/day!" && "bg-blue-500"} ${
+            } ${
+              offer?.title === "Luxury Cars at $99/day!" && "bg-indigo-500"
+            } ${
               offer?.title === "Free GPS with Any Rental!" && "bg-purple-500"
             } rounded-xl shadow-md p-6 transition-all space-y-2 *:text-white/90 text-center`}
             initial={{ opacity: 0, x: -200 }}
             whileHover={{ scale: 1.1 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 4, delay: index * 0.3, ease: "easeInOut"}}
+            transition={{ duration: 4, delay: index * 0.3, ease: "easeInOut" }}
           >
             <h2 className="text-xl font-bold">🎉{offer?.title}🎉</h2>
             <p className="text-sm">{offer?.description}</p>
 
             <Link to="/available-cars">
-              <button
-                className={`btn ${
-                  offer?.buttonText === "Book Now" && "btn-neutral"
-                } ${
-                  offer?.buttonText === "Learn More" && "btn-secondary"
-                } mt-5 text-white/90 text-lg font-bold px-8 rounded-full border-none`}
-              >
+              <button className="btn btn-neutral mt-5 text-white/90 text-lg font-bold px-8 rounded-full border-none">
                 {offer?.buttonText}
               </button>
             </Link>

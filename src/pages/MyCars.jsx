@@ -117,7 +117,7 @@ const MyCars = () => {
           </p>
 
           <Link to="/add-car">
-            <button className="btn btn-info text-white font-bold hover:bg-emerald-500 hover:text-white rounded-full text-lg px-8">
+            <button className="btn bg-indigo-500 text-white font-bold hover:bg-emerald-500 hover:text-white rounded-full text-lg px-8">
               Add a Car
             </button>
           </Link>
