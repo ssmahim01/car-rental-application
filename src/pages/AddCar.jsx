@@ -217,8 +217,8 @@ const AddCar = () => {
             </div>
           </div>
 
-          <div className="form-control mt-6 lg:w-3/5 md:w-3/4 mx-auto w-full">
-            <button className="w-full btn bg-emerald-500 text-lg text-white/90 hover:btn-accent hover:text-white font-bold rounded-full">
+          <div className="form-control mt-6 lg:w-2/5 md:w-3/4 mx-auto w-full">
+            <button className="w-full btn bg-emerald-500 text-lg text-white/90 hover:btn-accent hover:text-white font-bold rounded-md">
               Add Car
             </button>
           </div>
