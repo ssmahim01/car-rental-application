@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="100%" height="340" src="https://github.com/ssmahim01/car-rental-application/blob/main/public/car-house.png"  />
+  <img width="100%" height="340" src="car-house.png"  />
 </div>
 
 ---
@@ -144,17 +144,6 @@ npm run dev
 | **react-icons** | [Docs](https://react-icons.github.io/react-icons) |
 | **sweetalert2** | [Docs](https://sweetalert2.github.io) |
 | **recharts** | [Docs](https://recharts.org/en-US) |
-
----
-
-## 📝 Guidelines
-
-If you're cloning this repository, make sure to follow these steps:
-1. **Run this command in your terminal**:
-   ```sh
-   npm install
-   ```
-2. **Create a `.env.local` file** and add your API keys and URLs.
 
 ---
 
