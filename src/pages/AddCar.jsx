@@ -79,9 +79,9 @@ const AddCar = () => {
   };
 
   return (
-    <div className="pt-7 pb-14 flex flex-col justify-center items-center">
-      <div className="text-center mb-6">
-        <h2 className="text-4xl font-bold">Add a Car</h2>
+    <div className="pt-8 pb-12 flex flex-col justify-center items-center">
+      <div className="mb-4">
+        <h2 className="lg:text-5xl text-4xl font-bold">Add Car</h2>
       </div>
 
       <div className="border border-gray-200 card bg-base-100 lg:w-3/5 w-11/12 mx-auto shadow-md rounded-lg">
