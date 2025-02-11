@@ -43,7 +43,11 @@ const Navbar = () => {
       <li className="lg:block hidden">|</li>
       <NavLink to="/available-cars">Available Cars</NavLink>
       <li className="lg:block hidden">|</li>
-      {!user && <NavLink to="/log-in">Log-in</NavLink>}
+      {!user && <NavLink to="/log-in">
+      <button className="btn btn-sm bg-indigo-500 text-white border-none rounded-md font-bold">
+        Log In
+      </button>
+      </NavLink>}
       {user && (
         <>
           <NavLink to="/add-car">Add Car</NavLink>
@@ -53,20 +57,21 @@ const Navbar = () => {
           <NavLink to="/my-bookings">My Bookings</NavLink>
           <li className="lg:block hidden">|</li>
 
-          <button onClick={handleLogOut} className="text-rose-600 font-bold">
-            Logout
-          </button>
           <div
             className="tooltip tooltip-bottom"
             data-tip={`${user?.displayName}`}
           >
             <img
-              className="hidden lg:block w-12 h-12 rounded-full border-4 border-accent shadow-lg"
+              className="hidden lg:block w-11 h-11 rounded-full border-4 border-emerald-500 shadow-lg"
               src={user?.photoURL}
               alt={user?.displayName}
               referrerPolicy="no-referrer"
             />
           </div>
+
+          <button onClick={handleLogOut} className="btn btn-sm btn-error text-white font-bold">
+            Logout
+          </button>
         </>
       )}
     </div>
