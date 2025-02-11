@@ -313,7 +313,7 @@ const MyBookings = () => {
                 <div className="py-3 flex gap-4 justify-center items-center">
                   <button
                     onClick={() => handleModify(selectedBooking._id)}
-                    className="md:px-14 px-10 btn bg-violet-500 hover:bg-fuchsia-500 rounded-full text-white text-lg font-bold"
+                    className="md:px-14 px-10 btn bg-purple-500 rounded-full text-white text-lg font-bold"
                   >
                     Confirm
                   </button>

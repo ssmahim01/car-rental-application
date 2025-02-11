@@ -89,7 +89,7 @@ const BookingsTableRow = ({ booking, index, bookings, setBookings, handleModalOp
         <span
           className={`badge p-3 text-white ${
             booking?.status === "Pending"
-              ? "badge-warning"
+              ? "badge-neutral"
               : booking?.status === "Confirmed"
               ? "badge-success"
               : "badge-error"
@@ -102,7 +102,7 @@ const BookingsTableRow = ({ booking, index, bookings, setBookings, handleModalOp
         <button onClick={() => handleCanceledBooking(booking?._id)} className="inline-flex items-center gap-1 bg-red-500 text-white rounded-none font-semibold py-2 px-4" disabled={booking?.status === "Canceled"}>
           <FaTrashAlt /> Cancel
         </button>
-        <button onClick={() => handleModalOpen(booking)} className="inline-flex items-center gap-1 bg-blue-500 text-white rounded-none font-semibold py-2 px-4" disabled={booking?.status === "Canceled"}>
+        <button onClick={() => handleModalOpen(booking)} className="inline-flex items-center gap-1 bg-indigo-500 text-white rounded-none font-semibold py-2 px-4" disabled={booking?.status === "Canceled"}>
           <FaCalendarAlt /> Modify Date
         </button>
       </td>

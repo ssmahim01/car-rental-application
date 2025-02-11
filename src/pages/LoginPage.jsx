@@ -110,7 +110,7 @@ const LoginPage = () => {
           </div>
 
           <div className="form-control mt-6">
-            <button className="flex gap-2 items-center btn bg-indigo-600 border-none text-lg text-white/90 hover:btn-accent hover:text-white font-bold">
+            <button className="flex gap-2 items-center btn bg-indigo-500 border-none text-lg text-white/90 hover:bg-indigo-700 hover:text-white font-bold">
               Log In <RiLoginBoxLine className="text-xl" />
             </button>
           </div>

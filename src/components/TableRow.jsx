@@ -19,7 +19,7 @@ const TableRow = ({ car, index, handleUpdateCar, handleDelete }) => {
       <td className="flex gap-2 items-center">
         <button
           onClick={() => handleUpdateCar(car)}
-          className="bg-cyan-500 text-white rounded-xl font-semibold py-2 px-4"
+          className="bg-indigo-500 text-white rounded-xl font-semibold py-2 px-4"
         >
           Update
         </button>

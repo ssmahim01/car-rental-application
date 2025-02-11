@@ -238,7 +238,7 @@ const UpdateModal = ({ car, cars, setCars }) => {
           </div>
 
           <div className="form-control mt-6">
-            <button className="w-full btn bg-green-500 text-lg text-white/90 hover:btn-accent hover:text-white font-bold rounded-full">
+            <button className="w-full btn bg-indigo-500 text-lg text-white/90 hover:btn-primary hover:text-white font-bold rounded-full">
               Save Changes
             </button>
           </div>

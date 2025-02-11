@@ -169,7 +169,7 @@ const CarDetails = () => {
             <Link to="/log-in">
               <p className="flex gap-2 items-center mt-4">
                 <FiLogIn className="text-lg" />{" "}
-                <span className="text-amber-500 md:text-xl text-lg font-bold">
+                <span className="text-indigo-500 md:text-xl text-lg font-bold">
                   First log in then Book
                 </span>
               </p>
