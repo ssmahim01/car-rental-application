@@ -72,7 +72,7 @@ const Navbar = () => {
     </div>
   );
   return (
-    <div className="navbar justify-between bg-purple-100 shadow-md fixed z-10 lg:px-14 px-6">
+    <div className="navbar justify-between bg-neutral shadow-md fixed z-10 lg:px-14 px-6">
       <div className="navbar-start">
         <div className="flex gap-2 items-center">
           <img
@@ -80,7 +80,7 @@ const Navbar = () => {
             src="car-rental-96.png"
             alt="Logo of Car rental"
           />
-          <h2 className="md:text-2xl text-xl text-gray-800 font-bold">
+          <h2 className="md:text-2xl text-xl text-white font-bold">
             Car House
           </h2>
         </div>
@@ -90,7 +90,7 @@ const Navbar = () => {
           tabIndex={0}
           role="button"
           onClick={() => setModalOpen(!modalOpen)}
-          className="btn btn-ghost lg:hidden border border-gray-300 shadow-md"
+          className="btn btn-ghost text-white border border-neutral-700 lg:hidden shadow-md"
         >
           {modalOpen ? (
             <svg
@@ -151,7 +151,7 @@ const Navbar = () => {
         )}
       </div>
       <div className="navbar-end hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 *:text-gray-700 *:font-bold">
+        <ul className="menu menu-horizontal px-1 *:text-white *:font-bold">
           {routes}
         </ul>
       </div>
