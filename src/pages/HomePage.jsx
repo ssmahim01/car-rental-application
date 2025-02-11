@@ -17,11 +17,11 @@ const HomePage = () => {
             {/* Recent Listings Section */}
             <RecentListings />
 
-            {/* Find Best Cars Section */}
-            <FindBestCars />
-
             {/* Featured Cars Section */}
             <FeaturedCars />
+
+            {/* Find Best Cars Section */}
+            <FindBestCars />
 
             {/* Special Offers Section */}
             <SpecialOffers />

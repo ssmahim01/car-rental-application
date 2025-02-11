@@ -53,7 +53,7 @@ const RecentListings = () => {
               </h2>
 
               <p className="text-gray-600 font-medium">
-                {car?.description.slice(0, 80)}...
+                {car?.description.slice(0, 70)}...
               </p>
 
               <div className="pt-2 flex justify-between items-center">

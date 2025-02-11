@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const FindBestCars = () => {
     return (
-        <div className="my-14 lg:px-14 px-8">
+        <div className="my-14 lg:px-14 px-6">
             {/* <h2 className="md:text-left text-center md:text-4xl text-3xl font-extrabold mb-8">Find Best Cars</h2> */}
 
             <div className="flex lg:flex-row flex-col justify-between items-center gap-8">

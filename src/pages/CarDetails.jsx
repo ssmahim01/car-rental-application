@@ -8,6 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { FiLogIn } from "react-icons/fi";
 import { FaBookmark } from "react-icons/fa6";
 import { FaCalendarAlt } from "react-icons/fa";
+import { BiArrowBack } from "react-icons/bi";
 
 const CarDetails = () => {
   //   const { id } = useParams();
@@ -161,7 +162,7 @@ const CarDetails = () => {
             <button
               onClick={handleBook}
               disabled={!availability}
-              className="flex gap-2 items-center mt-4 btn bg-primary hover:bg-fuchsia-500 rounded-full text-white text-lg font-bold px-8"
+              className="flex gap-2 items-center mt-5 btn bg-indigo-600 hover:btn-primary rounded-md text-white text-lg font-bold px-8"
             >
               <FaBookmark className="text-lg text-white/90" /> Book Now
             </button>
@@ -187,8 +188,8 @@ const CarDetails = () => {
       </div>
 
       <Link to="/">
-        <button className="btn btn-outline border-2 border-purple-500 text-lg text-purple-600 md:text-left text-center font-bold rounded-full mt-8 px-8">
-          Back to Home
+        <button className="btn btn-outline border-2 border-purple-500 text-purple-600 md:text-left text-center hover:bg-purple-600 hover:border-none font-bold rounded-full mt-8 px-8">
+         <BiArrowBack className="text-xl" /> <span className="text-lg">Back to Home</span>
         </button>
       </Link>
 
