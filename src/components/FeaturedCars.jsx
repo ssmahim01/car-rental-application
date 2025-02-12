@@ -7,6 +7,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 import { MdEventAvailable, MdReadMore } from "react-icons/md";
+import { ImLocation } from "react-icons/im";
+import { FaDollarSign } from "react-icons/fa";
 
 const FeaturedCars = () => {
   const [cars, setCars] = useState([]);
@@ -60,7 +62,13 @@ const FeaturedCars = () => {
                   {car?.description.slice(0, 80)}...
                 </p>
 
-                <div className="flex gap-3 items-center mt-4">
+                <div className="my-1 flex gap-4 items-center">
+                  <p className="flex items-center text-white/80 font-semibold"><FaDollarSign className="text-xl" /> <span className="text-xl">{car?.price}</span></p>
+
+                  <p className="flex gap-1 items-center text-white/80 font-semibold"><ImLocation className="text-xl" /> <span className="text-xl">{car?.location}</span></p>
+                </div>
+
+                <div className="flex gap-3 items-center mt-3">
                   <Link to={`/car-details/${car?._id}`}>
                     <button className="bg-indigo-500 bg-opacity-70 hover:bg-indigo-700 border-none text-white font-bold rounded-md lg:px-8 md:px-6 px-3 py-2 flex gap-2 justify-center items-center">
                       <span className="lg:text-lg">Explore Now</span>{" "}
