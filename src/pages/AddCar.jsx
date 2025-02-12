@@ -84,7 +84,7 @@ const AddCar = () => {
         <h2 className="lg:text-5xl text-4xl font-bold">Add Car</h2>
       </div>
 
-      <div className="border border-gray-200 card bg-base-100 lg:w-3/5 w-11/12 mx-auto shadow-md rounded-lg">
+      <div className="border border-gray-200 card bg-base-100 lg:w-3/5 w-11/12 mx-auto shadow-md rounded-xl">
         <form className="card-body pt-4" onSubmit={handleAddCar}>
           <div className="flex gap-4 md:flex-row flex-col items-center *:w-full">
             <div className="form-control">

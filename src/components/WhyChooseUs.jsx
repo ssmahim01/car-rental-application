@@ -18,7 +18,7 @@ const WhyChooseUs = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
         {/* Card 1: Wide Variety of Cars */}
-        <div className="flex flex-col items-center text-center p-4 bg-gray-100 rounded-lg shadow hover:shadow-lg transition-all">
+        <div className="flex flex-col items-center text-center p-4 bg-gray-100 rounded-xl shadow hover:shadow-lg transition-all">
           <FaCarAlt className="text-4xl text-blue-500 mb-4" />
           <h3 className="text-xl font-semibold mb-2">Wide Variety of Cars</h3>
           <p className="text-gray-600">
@@ -27,7 +27,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Card 2: Affordable Prices */}
-        <div className="flex flex-col items-center text-center p-4 bg-gray-100 rounded-lg shadow hover:shadow-lg transition-all">
+        <div className="flex flex-col items-center text-center p-4 bg-gray-100 rounded-xl shadow hover:shadow-lg transition-all">
           <FaMoneyBillWave className="text-4xl text-green-500 mb-4" />
           <h3 className="text-xl font-semibold mb-2">Affordable Prices</h3>
           <p className="text-gray-600">
@@ -36,7 +36,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Card 3: Easy Booking Process */}
-        <div className="flex flex-col items-center text-center p-4 bg-gray-100 rounded-lg shadow hover:shadow-lg transition-all">
+        <div className="flex flex-col items-center text-center p-4 bg-gray-100 rounded-xl shadow hover:shadow-lg transition-all">
           <FaRegHandshake className="text-4xl text-yellow-500 mb-4" />
           <h3 className="text-xl font-semibold mb-2">Easy Booking Process</h3>
           <p className="text-gray-600 text-sm font-medium">
@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Card 4: Customer Support */}
-        <div className="flex flex-col items-center text-center p-4 bg-gray-100 rounded-lg shadow hover:shadow-lg transition-all">
+        <div className="flex flex-col items-center text-center p-4 bg-gray-100 rounded-xl shadow hover:shadow-lg transition-all">
           <FaHeadset className="text-4xl text-red-500 mb-4" />
           <h3 className="text-xl font-semibold mb-2">Customer Support</h3>
           <p className="text-gray-600 font-medium">24/7 assistance for all your queries.</p>

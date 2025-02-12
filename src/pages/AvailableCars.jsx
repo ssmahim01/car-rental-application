@@ -87,7 +87,7 @@ const AvailableCars = () => {
               className={`${
                 viewType === "grid"
                   ? "card bg-slate-50 shadow-md border border-gray-300 p-4 rounded-xl"
-                  : "border border-gray-200 flex md:flex-row flex-col-reverse justify-between md:items-center items-start bg-purple-50 shadow-md p-4 rounded-lg"
+                  : "border border-gray-200 flex md:flex-row flex-col-reverse justify-between md:items-center items-start bg-purple-50 shadow-md p-4 rounded-xl"
               }`}
             >
               {/* Car Image */}

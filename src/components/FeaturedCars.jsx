@@ -41,7 +41,7 @@ const FeaturedCars = () => {
         pagination={{ clickable: true }}
         // navigation={{ clickable: true }}
         autoplay={{ delay: 4000 }}
-        className="w-full lg:h-[470px] md:h-80 h-72 rounded-md"
+        className="w-full lg:h-[470px] md:h-80 h-72 rounded-xl"
       >
         {cars.map((car) => (
           <SwiperSlide key={car?._id}>
