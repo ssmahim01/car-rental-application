@@ -25,7 +25,7 @@ const AvailableCars = () => {
   }, [sorted, searchTerm]);
 
   return (
-    <div className="mt-9 pb-14">
+    <div className="mt-9 pb-14 max-w-[94rem] mx-auto">
       <div className="flex flex-wrap md:flex-row flex-col md:justify-between justify-center items-center lg:px-12 px-8 mb-5">
         <h2 className="text-3xl font-bold md:mb-0 mb-4">Available Cars</h2>
 
@@ -104,7 +104,7 @@ const AvailableCars = () => {
               <p className={`text-lg font-bold ${viewType === "grid" ? "block absolute top-5 left-6" : "hidden"}`}>
                 <span
                   className={`badge text-white ${
-                    car?.availability ? "badge-success" : "badge-error"
+                    car?.availability ? "bg-purple-600 p-2 border-none" : "badge-error"
                   }`}
                 >
                   {car?.availability ? "Available" : "Not Available"}
@@ -136,7 +136,7 @@ const AvailableCars = () => {
                   <p className="text-lg font-bold">
                     <span
                       className={`badge text-white ${
-                        car?.availability ? "badge-success" : "badge-error"
+                        car?.availability ? "bg-purple-600 p-2 border-none" : "badge-error"
                       }`}
                     >
                       {car?.availability ? "Available" : "Not Available"}
