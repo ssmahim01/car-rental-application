@@ -7,6 +7,7 @@ const Footer = () => {
     <footer className="bg-neutral-900 text-white/90 px-6 py-12 border-t border-neutral-700 shadow-md">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center md:flex-row md:justify-between border-b border-neutral-600 pb-8 mb-8">
+          <Link to="/">
           <div className="flex items-center gap-x-3">
             <img
               className="w-12 h-12 rounded-xl"
@@ -15,6 +16,7 @@ const Footer = () => {
             />
             <h2 className="text-3xl font-bold tracking-tight">Car House</h2>
           </div>
+          </Link>
           <p className="mt-4 md:mt-0 text-center md:text-left text-sm text-neutral-400 max-w-md">
             Car House Ltd. offers premium car rental services, ensuring a seamless and comfortable experience for all your travel needs.
           </p>
