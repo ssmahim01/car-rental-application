@@ -89,8 +89,8 @@ const MyCars = () => {
   // }, [sorted]);
 
   return (
-    <div className="pt-8 pb-12 bg-white">
-      <div className="lg:px-12 px-8 flex md:flex-row flex-col md:space-y-0 space-y-3 justify-between items-center mb-7">
+    <div className="pt-8 pb-12 lg:px-12 px-8 max-w-[90rem] mx-auto">
+      <div className="flex md:flex-row flex-col md:space-y-0 space-y-3 justify-between items-center mb-7">
         <h2 className="md:text-4xl text-3xl font-bold">My Cars</h2>
 
           <select
@@ -125,8 +125,8 @@ const MyCars = () => {
       )}
 
       {cars.length !== 0 && (
-        <div className="overflow-x-auto lg:px-12 w-full min-h-[calc(100vh-440px)]">
-          <table className="table">
+        <div className="overflow-x-auto w-full min-h-[calc(100vh-440px)]">
+          <table className="table bg-white/90">
             <thead>
               <tr className="bg-neutral *:text-white *:font-bold">
                 <th>No.</th>

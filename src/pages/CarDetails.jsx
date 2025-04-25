@@ -117,7 +117,7 @@ const CarDetails = () => {
   };
 
   return (
-    <div className="pt-10 pb-12 md:w-4/5 w-11/12 mx-auto">
+    <div className="pt-10 pb-12 md:w-4/5 w-11/12 max-w-[90rem] mx-auto">
       <h2 className="md:text-3xl text-2xl text-center font-extrabold text-gray-800 mb-4">
         Car Details: {model}
       </h2>
@@ -135,7 +135,7 @@ const CarDetails = () => {
             <p className="md:text-xl text-lg font-bold">
               <span
                 className={`badge text-white ${
-                  availability ? "badge-success" : "badge-error"
+                  availability ? "bg-purple-600 p-2 border-none" : "badge-error"
                 }`}
               >
                 {availability ? "Available" : "Not Available"}
@@ -221,7 +221,7 @@ const CarDetails = () => {
                 Availability:{" "}
                 <span
                   className={`badge text-white ${
-                    availability ? "badge-success" : "badge-error"
+                    availability ? "bg-purple-600 p-2 border-none" : "badge-error"
                   }`}
                 >
                   {availability ? "Available" : "Not Available"}

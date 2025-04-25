@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
+import { BiAddToQueue } from "react-icons/bi";
 
 const AddCar = () => {
   const { user } = useAuth();
@@ -79,7 +80,7 @@ const AddCar = () => {
   };
 
   return (
-    <div className="pt-8 pb-12 flex flex-col justify-center items-center">
+    <div className="pt-8 pb-12 flex flex-col justify-center items-center max-w-[108rem] mx-auto">
       <div className="mb-4">
         <h2 className="lg:text-5xl text-4xl font-bold">Add Car</h2>
       </div>
@@ -125,7 +126,7 @@ const AddCar = () => {
                 name="availability"
                 checked={availability}
                 onChange={(e) => setAvailability(e.target.checked)}
-                className="checkbox checkbox-primary"
+                className="checkbox"
               />
               <span className="text-gray-700 font-semibold">{availability ? "Available" : "Not Available"}</span>
             </div>
@@ -217,9 +218,10 @@ const AddCar = () => {
             </div>
           </div>
 
-          <div className="form-control mt-6 lg:w-2/5 md:w-3/4 mx-auto w-full">
-            <button className="w-full btn bg-emerald-500 text-lg text-white/90 hover:btn-accent hover:text-white font-bold rounded-md">
-              Add Car
+          <div className="form-control mt-6 lg:w-1/4 md:w-1/3 w-full">
+            <button className="w-full btn bg-purple-600 text-lg text-white/90 hover:btn-accent hover:text-white font-bold rounded-md flex gap-2 items-center">
+            <BiAddToQueue className="text-xl" />
+              <span>Add Car</span>
             </button>
           </div>
         </form>

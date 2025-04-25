@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useEffect, useRef, useState } from "react";
@@ -77,8 +77,10 @@ const Navbar = () => {
     </div>
   );
   return (
-    <div className="navbar justify-between bg-neutral shadow-md fixed z-10 lg:px-14 px-6">
-      <div className="navbar-start">
+    <div className="navbar bg-neutral shadow-md fixed z-10">
+     <div className="max-w-[94rem] mx-auto w-full px-6 lg:px-12 flex justify-between items-center">
+     <div className="navbar-start">
+        <Link to="/">
         <div className="flex gap-2 items-center">
           <img
             className="md:w-8 md:h-8 w-9 h-9 rounded-xl"
@@ -89,6 +91,7 @@ const Navbar = () => {
             Car House
           </h2>
         </div>
+        </Link>
       </div>
       <div className="dropdown" ref={dropdownRef}>
         <div
@@ -160,6 +163,7 @@ const Navbar = () => {
           {routes}
         </ul>
       </div>
+     </div>
     </div>
   );
 };

@@ -40,7 +40,7 @@ const RecentListings = () => {
             <p className="absolute right-2 top-1 text-lg font-bold">
               <span
                 className={`badge text-white ${
-                  car?.availability ? "badge-success" : "badge-error"
+                  car?.availability ? "bg-purple-600 p-2 border-none" : "badge-error"
                 }`}
               >
                 {car?.availability ? "Available" : "Not Available"}
