@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { BiSave } from "react-icons/bi";
+import { FcCancel } from "react-icons/fc";
 import Swal from "sweetalert2";
 
 const UpdateModal = ({ car, cars, setCars }) => {
@@ -12,7 +14,7 @@ const UpdateModal = ({ car, cars, setCars }) => {
     features,
     description,
     image,
-    location
+    location,
   } = car || {};
   // console.log(car);
 
@@ -106,7 +108,7 @@ const UpdateModal = ({ car, cars, setCars }) => {
         <h2 className="text-3xl font-bold text-center">Update The Car</h2>
         <div className="divider w-4/5 mx-auto"></div>
 
-        <form className="card-body pt-0" onSubmit={handleUpdate}>
+        <form className="card-body px-0 pt-0" onSubmit={handleUpdate}>
           <div className="flex gap-4 flex-col items-center *:w-full">
             <div className="form-control">
               <label className="label">
@@ -199,7 +201,7 @@ const UpdateModal = ({ car, cars, setCars }) => {
             <textarea
               name="description"
               value={carDescription}
-                onChange={(e) => setCarDescription(e.target.value)}
+              onChange={(e) => setCarDescription(e.target.value)}
               placeholder="Write your Description"
               className="textarea textarea-bordered textarea-md"
             ></textarea>
@@ -238,18 +240,18 @@ const UpdateModal = ({ car, cars, setCars }) => {
           </div>
 
           <div className="form-control mt-6">
-            <button className="w-full btn bg-indigo-500 text-lg text-white/90 hover:btn-primary hover:text-white font-bold rounded-full">
-              Save Changes
+            <div className="flex gap-3 items-center">
+            <button className="lg:w-1/2 lg:px-0 md:px-12 px-5 mx-auto btn bg-indigo-500 text-lg text-white/90 hover:btn-primary hover:text-white font-bold rounded-full flex gap-2 items-center">
+            <BiSave className="text-xl" />
+              <span>Save Changes</span>
             </button>
+            <button onClick={() => document.getElementById("update_modal").close()} className="flex gap-2 items-center lg:w-1/2 lg:px-0 md:px-12 px-5 mx-auto btn bg-neutral-800 hover:bg-neutral-900 text-lg text-white font-bold rounded-full">
+              <FcCancel className="text-xl" />
+             <span>Cancel</span>
+            </button>
+            </div>
           </div>
         </form>
-        <div className="modal-action block px-9 -mt-1">
-          <form method="dialog">
-            <button className="btn btn-error w-full text-lg text-white font-bold rounded-full">
-              Cancel
-            </button>
-          </form>
-        </div>
       </div>
     </div>
   );

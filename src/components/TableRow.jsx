@@ -1,3 +1,5 @@
+import { BiEditAlt, BiTrashAlt } from "react-icons/bi";
+
 const TableRow = ({ car, index, handleUpdateCar, handleDelete }) => {
   return (
     <tr className="hover *:text-gray-700 *:font-semibold">
@@ -13,22 +15,24 @@ const TableRow = ({ car, index, handleUpdateCar, handleDelete }) => {
       <td>${car?.price}</td>
       <td>{car?.bookingCount}</td>
       <td><span className={`badge text-white p-3 mb-1 ${
-          car?.availability ? "badge-success" : "badge-error"
+          car?.availability ? "bg-purple-600 border-none" : "badge-error"
         }`}>{car?.availability ? "Available" : "Not Available"}</span></td>
       <td>{new Date(car?.dateAdded).toLocaleDateString()}</td>
       <td className="flex gap-2 items-center">
         <button
           onClick={() => handleUpdateCar(car)}
-          className="bg-indigo-500 text-white rounded-xl font-semibold py-2 px-4"
+          className="bg-indigo-500 text-white rounded-xl font-semibold py-2 px-4 flex gap-2 items-center"
         >
-          Update
+          <BiEditAlt className="text-lg" />
+          <span>Update</span>
         </button>
 
         <button
           onClick={() => handleDelete(car?._id)}
-          className="bg-rose-500 text-white rounded-xl font-semibold py-2 px-4"
+          className="bg-rose-500 text-white rounded-xl font-semibold py-2 px-4 flex gap-2 items-center"
         >
-          Delete
+          <BiTrashAlt className="text-lg" />
+          <span>Delete</span>
         </button>
       </td>
     </tr>
