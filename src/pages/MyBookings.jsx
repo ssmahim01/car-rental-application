@@ -111,7 +111,7 @@ const MyBookings = () => {
   }, [user?.email, selectedBooking]);
 
   return (
-    <div className="pt-8 pb-12 bg-white">
+    <div className="pt-8 pb-12 max-w-[92rem] mx-auto">
       {bookings.length !== 0 && (
         <h2 className="md:text-4xl text-3xl text-center font-bold pt-2 mb-6">
           My Bookings
@@ -134,9 +134,9 @@ const MyBookings = () => {
 
       {bookings.length !== 0 && (
         <div className="overflow-x-auto lg:px-12 w-full">
-          <table className="table border border-gray-200 border-collapse">
+          <table className="table border border-neutral-100 bg-white/90 border-collapse">
             <thead>
-              <tr className="bg-gray-100 *:text-gray-800 *:font-bold">
+              <tr className="bg-neutral-100 *:text-neutral-800 *:font-bold">
                 <th className="p-4">Serial No.</th>
                 <th className="p-4">Car Image</th>
                 <th className="p-4">Car Model</th>

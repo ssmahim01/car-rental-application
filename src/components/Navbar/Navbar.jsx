@@ -62,7 +62,7 @@ const Navbar = () => {
             data-tip={`${user?.displayName}`}
           >
             <img
-              className="hidden lg:block w-11 h-11 rounded-full border-4 border-emerald-500 shadow-lg"
+              className="hidden lg:block w-11 h-11 rounded-full border-4 border-indigo-500 shadow-lg"
               src={user?.photoURL}
               alt={user?.displayName}
               referrerPolicy="no-referrer"
@@ -144,7 +144,7 @@ const Navbar = () => {
               {user && (
                 <div className="mb-4">
                   <img
-                  className="block mx-auto lg:hidden mb-2 md:w-20 md:h-20 w-14 h-14 rounded-full border-4 border-emerald-500 shadow-lg"
+                  className="block mx-auto lg:hidden mb-2 md:w-20 md:h-20 w-14 h-14 rounded-full border-4 border-indigo-500 shadow-lg"
                   src={user?.photoURL}
                   referrerPolicy="no-referrer"
                   alt={user?.displayName}
