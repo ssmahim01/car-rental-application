@@ -78,7 +78,7 @@ const Navbar = () => {
   );
   return (
     <div className="navbar bg-neutral shadow-md fixed z-10">
-     <div className="max-w-7xl mx-auto w-full px-6 flex justify-between items-center">
+     <div className="max-w-[94rem] mx-auto w-full px-6 lg:px-12 flex justify-between items-center">
      <div className="navbar-start">
         <Link to="/">
         <div className="flex gap-2 items-center">
